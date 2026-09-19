@@ -1,26 +1,63 @@
 @import "tailwindcss";
 
+@theme {
+  --font-sans: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: var(--font-serif), "Cormorant Garamond", Georgia, Cambria, serif;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --navy-deep: #0B1528;
+  --navy-dark: #060D1A;
+  --navy-surface: #112038;
+  --navy-border: #1C2E50;
+  --navy-muted: #8C9BB4;
+  --gold-primary: #C5A059;
+  --gold-soft: #DFCCA3;
+  --gold-glow: #F4EBD8;
+  --gold-dark: #9E7B35;
+  --bg-ivory: #FAF8F2;
+  --bg-white: #FFFFFF;
+  --bg-cream: #FDFBF7;
+  --bg-sand: #F5EFE6;
+  --border-light: #EBE3D5;
+  --border-gold: #DFCCA3;
+  --text-navy: #0B1528;
+  --text-muted: #5E6977;
+  --text-subtle: #8C9BB4;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  color: var(--text-navy);
+  background-color: var(--bg-ivory);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  font-family: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #0B1528;
+  background-color: #FAF8F2;
+}
+
+h1, h2, h3, .font-serif {
+  font-family: var(--font-serif), Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+::selection {
+  background-color: #0B1528;
+  color: #DFCCA3;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
