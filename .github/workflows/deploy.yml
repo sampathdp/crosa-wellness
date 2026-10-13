@@ -1,0 +1,125 @@
+name: Frontend CI & Deploy
+
+# Frontend workflow for Next.js:
+#   frontend         typecheck, lint, build, audit
+#   deploy-frontend  Next.js static export -> FTPS public_html (push to main/master)
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+permissions:
+  contents: read
+
+jobs:
+  frontend:
+    name: Frontend (typecheck, lint, build)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build
+        run: npm run build
+
+      # A newly-disclosed advisory in a transitive dependency isn't something this
+      # push caused, so it is surfaced without blocking.
+      - name: npm audit
+        continue-on-error: true
+        run: npm audit --omit=dev
+
+  deploy-frontend:
+    name: Deploy web (static export over FTPS)
+    # Static export. Pages load statically, so nothing here needs a Node server.
+    if: github.event_name != 'pull_request' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
+    needs: [frontend]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - run: npm ci
+
+      # Next route handlers cannot be statically exported; remove if any exist
+      - name: Remove server-only API routes
+        run: rm -rf src/app/api
+
+      - name: Require SITE_URL
+        env:
+          SITE_URL: ${{ vars.SITE_URL || secrets.SITE_URL }}
+        run: |
+          if [ -z "$SITE_URL" ]; then
+            echo "::error::Set SITE_URL (Settings > Secrets and variables > Actions, as a variable or a secret), e.g. https://yourdomain.com"
+            exit 1
+          fi
+
+      # STATIC_EXPORT=1 makes next.config.ts set output: "export" -> out/.
+      - name: Build static export
+        env:
+          STATIC_EXPORT: "1"
+          NEXT_PUBLIC_SITE_URL: ${{ vars.SITE_URL || secrets.SITE_URL }}
+        run: npm run build
+
+      # Without .htaccess clean URLs and the custom 404 break on the Apache host,
+      # so never upload a build that is missing it.
+      - name: Verify .htaccess is in the build
+        run: test -f out/.htaccess
+
+      # Verify core static pages exist in the export
+      - name: Verify export files
+        run: |
+          for f in index.html 404.html; do
+            test -f "out/$f" || { echo "::error::missing $f in the export"; exit 1; }
+          done
+
+      - name: Install lftp
+        run: sudo apt-get update && sudo apt-get install -y lftp
+
+      # ssl:verify-certificate is off because the FTPS host's certificate common
+      # name doesn't match the FTP_SERVER hostname on this shared host.
+      - name: Deploy via lftp
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          # Remote folder relative to the FTP login folder. Leave the FTP_DIR
+          # secret unset when the account already opens inside public_html.
+          FTP_DIR: ${{ secrets.FTP_DIR || '.' }}
+        run: |
+          lftp -c "
+            set ftp:ssl-allow yes;
+            set ftp:ssl-protect-data yes;
+            set ssl:verify-certificate no;
+            set net:max-retries 5;
+            set net:reconnect-interval-base 5;
+            set net:reconnect-interval-multiplier 1;
+            set net:timeout 60;
+            set ftp:passive-mode true;
+            set mirror:parallel-transfer-count 8;
+            open -u \"$FTP_USERNAME\",\"$FTP_PASSWORD\" \"$FTP_SERVER\";
+            mirror -R --parallel=8 --only-newer --no-perms --exclude-glob '.git*' --exclude-glob '.env*' ./out/ \"$FTP_DIR\";
+            bye;
+          "
