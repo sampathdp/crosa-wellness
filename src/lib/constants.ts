@@ -1,9 +1,13 @@
-﻿export const BRAND_INFO = {
+export const BRAND_INFO = {
   name: "CROSA",
-  tagline: "Move Better. Feel Better. Live Better.",
-  supportingText: "Discover a modern approach to fitness, therapeutic care and holistic wellness at CROSA in Colombo.",
+  fullName: "CROSA Pain Management & Rehabilitation Center",
+  tagline: "Move Better. Live Pain Free.",
+  secondaryTagline: "Less Pain, More Movement, Better Life",
+  motto: "Recover • Rehabilitate • Perform",
+  supportingText:
+    "Specialised care for your pain & movement. Expert pain relief, sports massage, rehabilitation, movement therapy, and wellness & recovery in Colombo.",
   description:
-    "CROSA is a holistic wellness and rejuvenation destination located in the heart of Colombo. The facility combines fitness training with therapeutic massage treatments and wellness services.",
+    "CROSA is a specialised pain management and movement rehabilitation center in Colombo. We specialise in back pain, neck pain, shoulder pain, knee pain, sports injuries, and post-injury rehab — helping you recover, rehabilitate, and perform.",
   address: {
     street: "283 - 287 Thimbirigasyaya Rd",
     city: "Colombo",
@@ -16,7 +20,7 @@
   phoneInternational: "+94 74 161 4191",
   whatsappNumber: "94741614191",
   email: "crosafitness01@gmail.com",
-  website: "crosa.lk",
+  website: "crosaclinic.com",
   hours: {
     weekdays: "Monday - Saturday: 6:00 AM - 8:30 PM",
     weekends: "Sunday: 7:00 AM - 6:00 PM",
@@ -32,86 +36,176 @@ export const NAV_LINKS = [
   { name: "Contact", href: "/contact" },
 ];
 
+export const CONDITIONS_TREATED = [
+  {
+    name: "Back Pain",
+    category: "Spine Care",
+    description: "Targeted lumbar decompression, spinal alignment, and relief from acute spasms or chronic aches.",
+  },
+  {
+    name: "Neck Pain",
+    category: "Cervical Care",
+    description: "Suboccipital release, postural realignment, and easing of desk-strain tension headaches.",
+  },
+  {
+    name: "Shoulder Pain",
+    category: "Joint Care",
+    description: "Rotator cuff restoration, impingement reduction, and scapular mobility activation.",
+  },
+  {
+    name: "Knee Pain",
+    category: "Joint Care",
+    description: "Patellofemoral tracking, ligament support, and targeted joint stabilization therapy.",
+  },
+  {
+    name: "Sports Injuries",
+    category: "Athletic Rehab",
+    description: "Rapid acute injury management, tissue repair, muscular flushing, and athletic reconditioning.",
+  },
+  {
+    name: "Post Injury Rehab",
+    category: "Functional Recovery",
+    description: "Structured recovery protocols restoring strength, mobility, and confidence post-injury or surgery.",
+  },
+];
+
+export const CORE_PILLARS = [
+  {
+    number: "01",
+    title: "Recover",
+    tagline: "Immediate Pain Relief",
+    description: "Alleviate acute symptoms, reduce joint inflammation, and soothe muscular distress through targeted clinical therapy.",
+  },
+  {
+    number: "02",
+    title: "Rehabilitate",
+    tagline: "Rebuild Function",
+    description: "Restore structural integrity, joint stability, and soft-tissue mobility through evidence-led rehabilitation protocols.",
+  },
+  {
+    number: "03",
+    title: "Perform",
+    tagline: "Movement Longevity",
+    description: "Optimize biomechanics, enhance functional strength, and bulletproof your body for an active, pain-free life.",
+  },
+];
+
 export const SERVICES = [
   {
-    id: "fitness-training",
-    title: "Fitness Training",
+    id: "pain-relief",
+    title: "Pain Relief",
+    badge: "Spine & Joint Care",
     shortDescription:
-      "Professional fitness programs designed to support strength, movement and overall wellbeing.",
+      "Specialised clinical care to alleviate acute and chronic back, neck, shoulder, and knee pain.",
     fullDescription:
-      "At CROSA, our fitness philosophy is centered on functional strength, longevity, and intelligent movement. Whether your goal is building lean muscle, increasing athletic mobility, or establishing a sustainable wellness routine, our certified trainers provide tailored programming suited to your individual physiology.",
+      "Our targeted pain relief protocols address the root biomechanical and neuromuscular causes of discomfort. Whether you are experiencing debilitating lower back pain, persistent neck stiffness, shoulder impingement, or knee aches, our clinical therapists combine spinal decompression, manual trigger point therapy, and joint mobilization to deliver immediate relief and lasting comfort.",
     benefits: [
-      "Customized movement & strength programming",
-      "One-on-one personal guidance & form correction",
-      "Mobility, core stability & posture improvement",
-      "Progressive overload & conditioning for all levels",
-      "High-end, hygienic, and distraction-free studio setting",
+      "Targeted relief for back pain, neck pain, and sciatica",
+      "Spine decompression & cervical tension release",
+      "Shoulder impingement & rotator cuff therapeutic care",
+      "Knee joint stabilization & inflammation management",
+      "Non-invasive, evidence-based pain management protocols",
     ],
-    image: "/images/fitness.jpg",
-    whatsappMessage: "Hello CROSA, I am interested in your Fitness Training service.",
-    badge: "Movement & Strength",
+    image: "/images/hero/therapeutic-massage.jpg",
+    whatsappMessage: "Hello CROSA, I would like to consult regarding Pain Relief treatment.",
   },
   {
-    id: "therapeutic-massage",
-    title: "Therapeutic Massage",
+    id: "sports-massage",
+    title: "Sports Massage",
+    badge: "Muscular Recovery",
     shortDescription:
-      "Therapeutic massage treatments designed to promote relaxation, recovery and rejuvenation.",
+      "Deep tissue remedial therapy designed for athletes and active individuals to accelerate recovery and eliminate muscle tension.",
     fullDescription:
-      "Restore your body's natural balance with our specialized therapeutic massage therapies. Designed specifically for active individuals, professionals experiencing tension, and anyone seeking restorative rejuvenation, our treatments release muscular tightness, improve circulation, and alleviate daily physical stress.",
+      "Engineered for athletes, runners, lifters, and active professionals, our Sports Massage treatments optimize muscular elasticity, flush accumulated metabolic waste, and deactivate dense trigger points. We restore range of motion and accelerate recovery windows so you can perform at your peak without stiffness.",
     benefits: [
-      "Deep tissue tension release & trigger point therapy",
-      "Accelerated recovery after physical activity",
-      "Lymphatic circulation enhancement & inflammation reduction",
-      "Stress relief, nervous system calming & better sleep",
-      "Private, tranquil treatment rooms with aromatherapy",
+      "Deep tissue tension & myofascial trigger point release",
+      "Accelerated post-workout recovery & lymphatic clearing",
+      "Increased muscular elasticity & joint range of motion",
+      "Pre- and post-competition athletic priming",
+      "Injury prevention for high-impact physical routines",
     ],
     image: "/images/massage.jpg",
-    whatsappMessage: "Hello CROSA, I am interested in your Therapeutic Massage service.",
-    badge: "Recovery & Relief",
+    whatsappMessage: "Hello CROSA, I would like to book a Sports Massage session.",
   },
   {
-    id: "wellness-services",
-    title: "Wellness Treatments",
+    id: "rehabilitation",
+    title: "Rehabilitation",
+    badge: "Post Injury Rehab",
     shortDescription:
-      "Personalized wellness experiences focused on restoring balance and helping you feel your best.",
+      "Structured post-injury and post-surgical protocols to rebuild strength, joint stability, and full functional mobility.",
     fullDescription:
-      "True wellness is the harmony of physical vitality, mental clarity, and deep bodily relaxation. Our holistic wellness treatments offer a sanctuary from Colombo's fast-paced tempo, combining restorative therapies, posture care, and guided unwinding sessions tailored to your lifestyle.",
+      "Recover safely from acute injuries, ligament sprains, muscle tears, or surgical procedures. Our clinical rehabilitation programs guide you step-by-step through tissue remodeling, joint stabilization, and progressive kinetic reloading to bring you back to full function without fear of re-injury.",
     benefits: [
-      "Holistic restoration designed for modern urban lifestyles",
-      "Guided relaxation & nervous system rejuvenation",
-      "Postural realignment & gentle restorative stretching",
-      "Custom wellness sessions combining movement & therapy",
-      "Dedicated personal care and respectful guidance",
+      "Custom post-injury & post-surgical rehab protocols",
+      "Joint stabilization & ligament recovery pathways",
+      "Kinetic reloading & muscular re-education",
+      "Scar tissue mobilization & swelling reduction",
+      "Guided return-to-sport and daily functional movement",
+    ],
+    image: "/images/facility.jpg",
+    whatsappMessage: "Hello CROSA, I am inquiring about Post Injury Rehabilitation.",
+  },
+  {
+    id: "movement-therapy",
+    title: "Movement Therapy",
+    badge: "Biomechanics & Mobility",
+    shortDescription:
+      "Corrective movement coaching and kinetic alignment to restore natural mobility, posture, and effortless function.",
+    fullDescription:
+      "True freedom of movement begins with proper biomechanics. Our Movement Therapy programs evaluate your kinetic chain to identify postural imbalances, joint restrictions, and movement compensations. Through tailored corrective drills and functional conditioning, we help you move better with zero restriction.",
+    benefits: [
+      "Comprehensive kinetic screening & gait analysis",
+      "Postural correction for desk strain & sedentary patterns",
+      "Functional mobility & core stabilization drills",
+      "Corrective movement patterns to prevent re-injury",
+      "Private 1-on-1 coaching in a calm studio bay",
+    ],
+    image: "/images/fitness.jpg",
+    whatsappMessage: "Hello CROSA, I am interested in Movement Therapy coaching.",
+  },
+  {
+    id: "wellness-recovery",
+    title: "Wellness & Recovery",
+    badge: "Holistic Health",
+    shortDescription:
+      "Restorative therapies to down-regulate stress, soothe the nervous system, and support long-term physical wellbeing.",
+    fullDescription:
+      "Sustain your progress with restorative wellness therapies designed to quiet the nervous system, release systemic fatigue, and promote cellular recovery. Combining gentle restorative decompression, thermal care, and holistic techniques, this is your sanctuary for long-term health and vitality.",
+    benefits: [
+      "Parasympathetic nervous system reset & stress reduction",
+      "Thermal basalt therapy & circulatory enhancement",
+      "Whole-body restorative decompression & relaxation",
+      "Chronic fatigue relief & improved sleep quality",
+      "Long-term maintenance for a healthier, pain-free life",
     ],
     image: "/images/wellness.jpg",
-    whatsappMessage: "Hello CROSA, I am interested in your Wellness Services.",
-    badge: "Holistic Vitality",
+    whatsappMessage: "Hello CROSA, I would like to book a Wellness & Recovery session.",
   },
 ];
 
 export const WHY_US_FEATURES = [
   {
-    title: "Professional Care",
+    title: "Specialised Clinical Care",
     description:
-      "Our dedicated team brings certified expertise in fitness training and restorative therapeutic care, ensuring safe, effective, and attentive guidance.",
+      "Our certified practitioners specialise in pain relief, injury rehabilitation, and biomechanics — treating the root cause of your pain rather than temporary symptoms.",
     icon: "ShieldCheck",
   },
   {
-    title: "Holistic Wellness",
+    title: "Complete Recovery Cycle",
     description:
-      "We unite athletic conditioning with therapeutic massage under one roof, treating your body as an integrated, interconnected system.",
+      "We unite acute pain management, targeted sports massage, rehabilitation, and corrective movement therapy under one roof.",
     icon: "Sparkles",
   },
   {
-    title: "Modern Facility",
+    title: "Private Modern Facility",
     description:
-      "Located centrally on Thimbirigasyaya Road in Colombo, our space is designed with calm natural aesthetics, immaculate hygiene, and premium equipment.",
+      "Located centrally on Thimbirigasyaya Road in Colombo, our space offers completely private treatment suites, modern equipment, and immaculate hygiene.",
     icon: "Building2",
   },
   {
-    title: "Personalized Experience",
+    title: "Personalised Treatment",
     description:
-      "No one-size-fits-all routines. Every training session and massage treatment is customized around your goals, physical needs, and comfort.",
+      "Every treatment plan is bespoke — calibrated around your specific injury, pain level, posture, and physical aspirations.",
     icon: "HeartHandshake",
   },
 ];

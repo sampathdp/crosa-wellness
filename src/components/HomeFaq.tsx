@@ -7,7 +7,7 @@ import WhatsAppIcon from "./WhatsAppIcon";
 
 interface FaqItem {
   id: string;
-  category: "all" | "therapy" | "movement" | "sanctuary";
+  category: "all" | "pain" | "sports" | "clinic";
   categoryLabel: string;
   question: string;
   answer: string;
@@ -17,65 +17,65 @@ interface FaqItem {
 const FAQS: FaqItem[] = [
   {
     id: "01",
-    category: "sanctuary",
-    categoryLabel: "Booking & Intake",
-    question: "How do I arrange my initial consultation or visit?",
+    category: "pain",
+    categoryLabel: "Pain Relief",
+    question: "What specific conditions do you treat at CROSA?",
     answer:
-      "Arranging your first visit is effortless. Connect with our sanctuary concierge via WhatsApp or phone at 074 161 4191. We will review your current physical state, recovery priorities, or fitness goals and reserve your private suite with your dedicated practitioner.",
-    highlight: "Effortless WhatsApp reservation with tailored intake",
+      "Our clinic specialises in non-invasive, evidence-led clinical care for Back Pain, Neck Pain, Shoulder Pain, Knee Pain, Sports Injuries, and Post-Injury Rehabilitation. We also offer Sports Massage, Movement Therapy, and restorative Wellness & Recovery.",
+    highlight: "Specialised in Back, Neck, Shoulder, Knee & Sports Injuries",
   },
   {
     id: "02",
-    category: "therapy",
-    categoryLabel: "Therapeutic Bodywork",
-    question: "How does therapeutic massage differ from conventional spa treatments?",
+    category: "sports",
+    categoryLabel: "Sports Massage",
+    question: "How does Sports Massage differ from conventional relaxation massage?",
     answer:
-      "While general spa treatments focus on superficial pampering, CROSA's therapeutic massage is an anatomical bodywork discipline. Certified practitioners assess musculoskeletal restriction, applying heated basalt stones and myofascial manipulation to decompress dense muscle fibers, relieve sciatica or trapezius strain, and restore functional posture.",
-    highlight: "Clinical myofascial release & volcanic basalt stones",
+      "Conventional massage focuses primarily on superficial pampering. At CROSA, our Sports Massage is a clinical remedial discipline: certified therapists assess muscular restriction, deactivating dense trigger points, flushing cellular lactic acid, and restoring fascial glide so athletes and active performers recover faster.",
+    highlight: "Remedial myofascial release & athletic performance priming",
   },
   {
     id: "03",
-    category: "movement",
-    categoryLabel: "1-on-1 Movement",
-    question: "Do I need previous fitness conditioning before beginning training?",
+    category: "pain",
+    categoryLabel: "Rehabilitation",
+    question: "Do I need a doctor's referral to begin pain relief or rehabilitation?",
     answer:
-      "No prior experience is necessary. Every movement plan begins with an unhurried biomechanical assessment of your mobility, joint mechanics, and posture. Coaching is strictly one-on-one, paced to respect your physiology while guiding you toward lasting, pain-free vitality.",
-    highlight: "Biomechanical screening & 100% personalized progression",
+      "No doctor's referral is necessary. At the start of your first appointment, our senior clinicians conduct a comprehensive anatomical screening and movement assessment to pinpoint the root causes of your pain and construct your personalized recovery plan.",
+    highlight: "Comprehensive anatomical assessment on first visit",
   },
   {
     id: "04",
-    category: "therapy",
-    categoryLabel: "Dual Discipline",
-    question: "Can fitness conditioning and restorative therapy be combined?",
+    category: "sports",
+    categoryLabel: "Movement Therapy",
+    question: "How does Movement Therapy help prevent recurring injuries?",
     answer:
-      "Yes—this integrated synergy is the core philosophy of CROSA. Many clients pair focused functional movement sessions with therapeutic massage treatments across the week to ensure the muscular system repairs deeply and recovers without cumulative tension.",
-    highlight: "Synergistic recovery uniting kinetic output with cellular rest",
+      "Pain often recurs because the body develops faulty movement compensations. Our 1-on-1 Movement Therapy retrains your kinetic chain, strengthening stabilizing muscles, correcting postural asymmetries, and restoring pain-free biomechanics for long-term health.",
+    highlight: "Corrective biomechanics & long-term kinetic resilience",
   },
   {
     id: "05",
-    category: "sanctuary",
-    categoryLabel: "Privacy & Space",
-    question: "Are the treatment and coaching spaces completely private?",
+    category: "clinic",
+    categoryLabel: "Privacy & Environment",
+    question: "Are the treatment rooms strictly private?",
     answer:
-      "Yes. CROSA was explicitly designed to reject crowded commercial gyms and communal spa waiting rooms. Every massage and personal training session takes place in private, acoustic-insulated suites overlooking our tranquil bamboo courtyard, ensuring complete discretion and peace.",
-    highlight: "100% private suites • Zero crowds • Total discretion",
+      "Yes, without exception. CROSA operates strictly with private, sound-insulated treatment suites and individual movement bays on Thimbirigasyaya Road in Colombo 05, ensuring complete privacy, personal dignity, and zero crowds during your visit.",
+    highlight: "100% private treatment suites & individual bays",
   },
   {
     id: "06",
-    category: "sanctuary",
-    categoryLabel: "Location & Access",
-    question: "Where is the sanctuary located and what are the visiting hours?",
+    category: "clinic",
+    categoryLabel: "Location & Booking",
+    question: "Where is the clinic located and how do I schedule an appointment?",
     answer:
-      "CROSA is centrally situated at 283 - 287 Thimbirigasyaya Road, Colombo 00500. We welcome clients Monday through Saturday from 6:00 AM to 8:30 PM, and Sundays from 7:00 AM to 6:00 PM with convenient dedicated private parking on-site.",
-    highlight: "Prime Colombo 05 location with dedicated private parking",
+      "We are located at 283 - 287 Thimbirigasyaya Road, Colombo 00500 with dedicated on-site parking. You can easily schedule an appointment by contacting our clinic concierge directly on WhatsApp or calling 074 161 4191.",
+    highlight: "Prime Colombo 05 location with dedicated parking • 074 161 4191",
   },
 ];
 
 const CATEGORIES = [
   { id: "all", label: "All Questions" },
-  { id: "therapy", label: "Therapeutic Massage" },
-  { id: "movement", label: "1-on-1 Movement" },
-  { id: "sanctuary", label: "Sanctuary & Booking" },
+  { id: "pain", label: "Pain Relief & Rehab" },
+  { id: "sports", label: "Sports Massage & Movement" },
+  { id: "clinic", label: "Clinic & Booking" },
 ];
 
 export default function HomeFaq() {

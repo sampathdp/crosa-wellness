@@ -67,20 +67,11 @@ jobs:
       - name: Remove server-only API routes
         run: rm -rf src/app/api
 
-      - name: Require SITE_URL
-        env:
-          SITE_URL: ${{ vars.SITE_URL || secrets.SITE_URL }}
-        run: |
-          if [ -z "$SITE_URL" ]; then
-            echo "::error::Set SITE_URL (Settings > Secrets and variables > Actions, as a variable or a secret), e.g. https://yourdomain.com"
-            exit 1
-          fi
-
       # STATIC_EXPORT=1 makes next.config.ts set output: "export" -> out/.
       - name: Build static export
         env:
           STATIC_EXPORT: "1"
-          NEXT_PUBLIC_SITE_URL: ${{ vars.SITE_URL || secrets.SITE_URL }}
+          NEXT_PUBLIC_SITE_URL: ${{ vars.SITE_URL || secrets.SITE_URL || '' }}
         run: npm run build
 
       # Without .htaccess clean URLs and the custom 404 break on the Apache host,

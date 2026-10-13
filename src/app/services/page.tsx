@@ -3,16 +3,18 @@ import { Metadata } from "next";
 import ServicesView from "@/components/services/ServicesView";
 
 export const metadata: Metadata = {
-  title: "Sanctuary Services | Movement Coaching, Therapeutic Massage & Wellness",
+  title: "Specialised Care for Pain & Movement | CROSA Colombo",
   description:
-    "Explore bespoke fitness movement coaching, anatomical therapeutic massage, and holistic rejuvenation protocols at CROSA, Colombo's premier private sanctuary.",
+    "Expert care for back pain, neck pain, shoulder pain, knee pain, sports injuries, and post-injury rehab. Discover CROSA's 5 specialised disciplines in Colombo: Pain Relief, Sports Massage, Rehabilitation, Movement Therapy, and Wellness & Recovery.",
   keywords: [
-    "therapeutic massage colombo",
-    "private personal training colombo",
-    "deep tissue massage colombo 05",
-    "wellness sanctuary sri lanka",
-    "sports recovery colombo",
-    "crosa wellness services",
+    "pain relief colombo",
+    "back pain treatment colombo",
+    "neck pain relief sri lanka",
+    "sports massage colombo",
+    "rehabilitation colombo",
+    "post injury rehab sri lanka",
+    "movement therapy colombo",
+    "crosa pain management center",
   ],
 };
 
