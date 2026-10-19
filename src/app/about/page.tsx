@@ -18,7 +18,7 @@ export default function AboutPage() {
   return (
     <div className="flex flex-col w-full">
       {/* 1. HERO */}
-      <section className="relative pt-36 pb-20 sm:pt-44 sm:pb-28 bg-[#060D1A] text-white overflow-hidden">
+      <section className="relative pt-36 pb-20 sm:pt-44 sm:pb-28 surface-dark bg-[#060D1A] text-white overflow-hidden">
         <div className="absolute inset-0 opacity-25">
           <Image
             src="/images/about.jpg"
@@ -31,7 +31,7 @@ export default function AboutPage() {
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-5">
-          <p className="text-xs uppercase tracking-[0.3em] font-semibold text-[#C5A059]">
+          <p className="text-xs uppercase tracking-[0.3em] font-semibold text-accent">
             Specialised Care For Your Pain &amp; Movement
           </p>
           <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl font-normal tracking-tight text-white leading-tight">
@@ -40,18 +40,18 @@ export default function AboutPage() {
           <p className="max-w-2xl mx-auto text-base sm:text-lg text-[#DFE7F3] font-light leading-relaxed">
             A premier pain management and movement rehabilitation center in Colombo dedicated to helping you live pain-free.
           </p>
-          <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/10 border border-[#C5A059]/40 text-xs uppercase tracking-[0.2em] text-[#DFCCA3]">
+          <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/10 border border-accent/40 text-xs uppercase tracking-[0.2em] text-accent-soft">
             <span>Recover</span>
-            <span className="text-[#C5A059]">&bull;</span>
+            <span className="text-accent">&bull;</span>
             <span>Rehabilitate</span>
-            <span className="text-[#C5A059]">&bull;</span>
+            <span className="text-accent">&bull;</span>
             <span>Perform</span>
           </div>
         </div>
       </section>
 
       {/* 2. OUR STORY */}
-      <section className="py-20 sm:py-28 bg-[#FAF8F2] border-b border-[#E8DEC8]">
+      <section className="py-20 sm:py-28 bg-[#FAF8F2] border-b border-line">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             
@@ -71,14 +71,14 @@ export default function AboutPage() {
               </p>
 
               <div className="pt-2">
-                <blockquote className="p-4 rounded-xl border-l-2 border-[#C5A059] bg-[#F4EFE6] text-sm italic text-[#0B1528]">
+                <blockquote className="p-4 rounded-xl border-l-2 border-accent bg-ivory-deep text-sm italic text-[#0B1528]">
                   &ldquo;Less pain. More movement. Better life. We don&apos;t just alleviate symptoms; we restore your body&apos;s natural capacity to move without fear.&rdquo;
                 </blockquote>
               </div>
             </div>
 
             <div className="lg:col-span-6">
-              <div className="relative h-[380px] sm:h-[460px] w-full rounded-2xl overflow-hidden shadow-xl border border-[#E8DEC8]">
+              <div className="relative h-[380px] sm:h-[460px] w-full rounded-2xl overflow-hidden shadow-xl border border-line">
                 <Image
                   src="/images/facility.jpg"
                   alt="CROSA Pain Management Center Facility"
@@ -94,7 +94,7 @@ export default function AboutPage() {
       </section>
 
       {/* 3. CONDITIONS TREATED SHOWCASE */}
-      <section className="py-20 sm:py-28 bg-[#F5EFE6] border-b border-[#E8DEC8]">
+      <section className="py-20 sm:py-28 bg-ivory-deep border-b border-line">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <SectionHeading
             eyebrow="Clinical Scope"
@@ -104,10 +104,10 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {CONDITIONS_TREATED.map((c, idx) => (
-              <div key={idx} className="bg-white p-6 rounded-2xl border border-[#E8DEC8] shadow-sm space-y-3">
+              <div key={idx} className="bg-white p-6 rounded-2xl border border-line shadow-sm space-y-3">
                 <div className="flex items-center justify-between">
                   <h3 className="font-serif text-xl font-normal text-[#0B1528]">{c.name}</h3>
-                  <span className="text-[10px] uppercase font-semibold tracking-wider text-[#C5A059] px-2.5 py-0.5 rounded-full bg-[#FAF8F2] border border-[#E8DEC8]">
+                  <span className="text-[10px] uppercase font-semibold tracking-wider text-accent px-2.5 py-0.5 rounded-full bg-[#FAF8F2] border border-line">
                     {c.category}
                   </span>
                 </div>
@@ -119,10 +119,10 @@ export default function AboutPage() {
       </section>
 
       {/* 4. THE 3 PHASES: RECOVER, REHABILITATE, PERFORM */}
-      <section className="py-20 sm:py-28 bg-[#060D1A] text-white">
+      <section className="py-20 sm:py-28 surface-dark bg-[#060D1A] text-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
           <div className="text-center max-w-2xl mx-auto space-y-3">
-            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#C5A059]">
+            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-accent">
               The Clinical Cycle
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light text-white leading-tight">
@@ -137,11 +137,11 @@ export default function AboutPage() {
             {CORE_PILLARS.map((pillar) => (
               <div
                 key={pillar.number}
-                className="p-8 rounded-2xl bg-[#0B1528] border border-[#1C2E50] hover:border-[#C5A059]/50 transition-all space-y-4"
+                className="p-8 rounded-2xl surface-dark bg-[#0B1528] border border-[#1C2E50] hover:border-accent/50 transition-all space-y-4"
               >
-                <span className="font-mono text-xs text-[#C5A059] tracking-widest">{pillar.number}</span>
+                <span className="font-mono text-xs text-accent tracking-widest">{pillar.number}</span>
                 <h3 className="font-serif text-2xl text-white font-normal">{pillar.title}</h3>
-                <span className="text-xs uppercase tracking-wider text-[#DFCCA3] block">{pillar.tagline}</span>
+                <span className="text-xs uppercase tracking-wider text-accent-soft block">{pillar.tagline}</span>
                 <p className="text-xs sm:text-sm text-[#8C9BB4] leading-relaxed">{pillar.description}</p>
               </div>
             ))}
@@ -151,7 +151,7 @@ export default function AboutPage() {
           <div className="text-center pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/services"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#C5A059] hover:bg-[#DFCCA3] text-[#0B1528] text-xs font-semibold uppercase tracking-[0.2em] transition-all shadow-md"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-accent hover:bg-accent-soft text-[#0B1528] text-xs font-semibold uppercase tracking-[0.2em] transition-all shadow-md"
             >
               <span>Explore Our Services</span>
               <ArrowRight className="w-3.5 h-3.5" />

@@ -100,15 +100,11 @@ export default function HeroBgCarousel({
         );
       })}
 
-      {/* Luxury Translucent Scrim — More Transparent so Background Image Shines Through */}
-      {/* Mobile: Gentle top-to-bottom translucent fade */}
-      <div className="md:hidden absolute inset-0 z-20 pointer-events-none bg-[linear-gradient(180deg,rgba(250,248,242,0.82)_0%,rgba(250,248,242,0.65)_50%,rgba(250,248,242,0.2)_80%,transparent_100%)]" />
-
-      {/* Desktop (md & up): Clean, more transparent left-to-center gradient */}
-      <div className="hidden md:block absolute inset-0 z-20 pointer-events-none bg-[linear-gradient(90deg,rgba(250,248,242,0.78)_0%,rgba(250,248,242,0.68)_35%,rgba(250,248,242,0.35)_52%,rgba(250,248,242,0.05)_68%,transparent_80%)]" />
-
-      {/* Subtle bottom fade into the next section */}
-      <div className="absolute bottom-0 inset-x-0 h-24 z-20 pointer-events-none bg-gradient-to-t from-[#FAF8F2] via-[#FAF8F2]/30 to-transparent" />
+      {/* Deep navy scrim: keeps white copy legible while the photo stays visible on the right */}
+      <div className="md:hidden absolute inset-0 z-20 pointer-events-none bg-[linear-gradient(180deg,rgba(6,13,26,0.8)_0%,rgba(6,13,26,0.65)_55%,rgba(6,13,26,0.85)_100%)]" />
+      <div className="hidden md:block absolute inset-0 z-20 pointer-events-none bg-[linear-gradient(90deg,rgba(6,13,26,0.92)_0%,rgba(8,17,34,0.78)_38%,rgba(11,21,40,0.35)_65%,rgba(11,21,40,0.1)_100%)]" />
+      <div className="absolute inset-x-0 top-0 h-40 z-20 pointer-events-none bg-gradient-to-b from-[#060D1A]/70 to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 h-56 z-20 pointer-events-none bg-gradient-to-t from-[#060D1A] via-[#060D1A]/60 to-transparent" />
 
       {/* Luxury Ambient Gold Floating Particles */}
       <AmbientGoldParticles
@@ -119,11 +115,11 @@ export default function HeroBgCarousel({
       />
 
       {/* Bottom-Right Luxury Carousel Controls & Pill Indicators */}
-      <div className="absolute bottom-20 sm:bottom-24 right-6 sm:right-10 lg:right-16 z-30 flex items-center gap-3 bg-[#0B1528]/85 backdrop-blur-md px-3.5 py-2 rounded-full border border-[#C5A059]/40 shadow-xl animate-in fade-in duration-500">
+      <div className="absolute bottom-36 sm:bottom-40 right-6 sm:right-10 lg:right-16 z-30 flex items-center gap-3 surface-dark bg-white/10 backdrop-blur-md px-3.5 py-2 rounded-full border border-white/20 shadow-xl animate-in fade-in duration-500">
         {/* Previous Button */}
         <button
           onClick={prevSlide}
-          className="p-1 rounded-full text-[#DFCCA3] hover:text-white hover:bg-white/10 transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-[#C5A059]"
+          className="p-1 rounded-full text-accent-soft hover:text-white hover:bg-white/10 transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-accent"
           aria-label="Previous background slide"
         >
           <ChevronLeft className="w-3.5 h-3.5" />
@@ -139,7 +135,7 @@ export default function HeroBgCarousel({
                 onClick={() => setCurrentIndex(idx)}
                 className={`h-1.5 rounded-full transition-all duration-300 ${
                   isActive
-                    ? "w-6 bg-[#C5A059]"
+                    ? "w-6 bg-accent"
                     : "w-1.5 bg-white/40 hover:bg-white/70"
                 }`}
                 aria-label={`Go to slide ${idx + 1}: ${slide.tagline || ""}`}
@@ -151,14 +147,14 @@ export default function HeroBgCarousel({
         {/* Next Button */}
         <button
           onClick={nextSlide}
-          className="p-1 rounded-full text-[#DFCCA3] hover:text-white hover:bg-white/10 transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-[#C5A059]"
+          className="p-1 rounded-full text-accent-soft hover:text-white hover:bg-white/10 transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-accent"
           aria-label="Next background slide"
         >
           <ChevronRight className="w-3.5 h-3.5" />
         </button>
 
         {/* Slide Counter */}
-        <span className="text-[10px] font-mono tracking-widest text-[#DFCCA3] pl-1 border-l border-white/20">
+        <span className="text-[10px] font-mono tracking-widest text-accent-soft pl-1 border-l border-white/20">
           0{currentIndex + 1}/0{slides.length}
         </span>
       </div>

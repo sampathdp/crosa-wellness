@@ -1,9 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight, Star, ShieldCheck, Sparkles, Quote, ArrowUpRight } from "lucide-react";
-import { getWhatsAppUrl } from "@/lib/utils";
-import AmbientGoldParticles from "./AmbientGoldParticles";
+import { Star } from "lucide-react";
 
 interface Testimonial {
   id: string;
@@ -19,6 +17,8 @@ interface Testimonial {
   quote: string;
   outcome: string;
 }
+
+const AUTOPLAY_MS = 8000;
 
 const TESTIMONIALS: Testimonial[] = [
   {
@@ -70,207 +70,88 @@ const TESTIMONIALS: Testimonial[] = [
 
 export default function TestimonialsSection() {
   const [activeIdx, setActiveIdx] = useState(0);
+  const [paused, setPaused] = useState(false);
 
-  const prevSlide = () => {
-    setActiveIdx((prev) => (prev === 0 ? TESTIMONIALS.length - 1 : prev - 1));
-  };
-
-  const nextSlide = () => {
-    setActiveIdx((prev) => (prev === TESTIMONIALS.length - 1 ? 0 : prev + 1));
-  };
+  useEffect(() => {
+    if (paused) return;
+    const t = setTimeout(() => setActiveIdx((i) => (i + 1) % TESTIMONIALS.length), AUTOPLAY_MS);
+    return () => clearTimeout(t);
+  }, [activeIdx, paused]);
 
   const active = TESTIMONIALS[activeIdx];
 
   return (
     <section
       id="testimonials"
-      className="relative py-28 sm:py-36 bg-[#060D1A] text-white overflow-hidden border-b border-[#1C2E50]"
+      className="relative py-28 sm:py-40 surface-dark bg-[#060D1A] text-white overflow-hidden"
     >
-      {/* Background Architectural Monogram Watermark */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none select-none">
-        <span className="absolute -top-12 left-1/2 -translate-x-1/2 font-serif text-[18vw] font-light text-white/[0.015] tracking-[0.2em] whitespace-nowrap">
-          REFLECTIONS
-        </span>
-        {/* Ambient Radial Golden Glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-[#C5A059]/[0.03] rounded-full blur-3xl pointer-events-none" />
-        {/* Ambient Gold Particles */}
-        <AmbientGoldParticles density={28} speed={0.3} colorScheme="gold" />
-      </div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] rounded-full bg-[#1C3A6E]/35 blur-[160px] pointer-events-none" />
 
-      <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-16">
-        
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center justify-center gap-3">
-            <span className="w-8 h-[1px] bg-[#C5A059]" />
-            <p className="text-xs uppercase tracking-[0.35em] font-medium text-[#C5A059]">
-              Verified Client Reflections
-            </p>
-            <span className="w-8 h-[1px] bg-[#C5A059]" />
-          </div>
+      <div
+        className="relative z-10 max-w-4xl mx-auto px-6 sm:px-8 text-center"
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+      >
+        <p className="text-xs uppercase tracking-[0.35em] font-medium text-accent mb-10">Client Reflections</p>
 
-          <h2 className="font-serif text-3xl sm:text-5xl md:text-6xl font-light text-white tracking-tight leading-[1.12]">
-            Endorsed by Colombo&apos;s Discerning Leaders.
-          </h2>
+        <div className="flex justify-center gap-1 mb-8">
+          {[0, 1, 2, 3, 4].map((i) => (
+            <Star key={i} className="w-4 h-4 fill-white text-white" />
+          ))}
+        </div>
 
-          <p className="text-sm sm:text-base text-[#8C9BB4] font-light leading-relaxed max-w-xl mx-auto">
-            Discover how corporate executives, physicians, and athletic professionals experience lasting physical vitality through our bespoke sanctuary care.
+        <div className="relative min-h-[15rem] sm:min-h-[16rem] flex items-center justify-center">
+          <span aria-hidden className="absolute -top-6 sm:-top-10 left-1/2 -translate-x-1/2 font-serif text-[9rem] sm:text-[12rem] leading-none text-white/[0.07] select-none">
+            &ldquo;
+          </span>
+          <blockquote
+            key={active.id}
+            className="relative font-serif text-3xl sm:text-5xl lg:text-[3.5rem] font-light leading-[1.15] tracking-tight animate-in fade-in slide-in-from-bottom-3 duration-700"
+          >
+            {active.headline}
+          </blockquote>
+        </div>
+
+        <div key={`${active.id}-a`} className="mt-10 animate-in fade-in duration-700">
+          <p className="font-serif text-xl">{active.name}</p>
+          <p className="text-sm text-white/50 mt-1">
+            {active.title} &middot; {active.location}
           </p>
         </div>
 
-        {/* Featured Main Stage Quotation Showcase */}
-        <div className="relative max-w-4xl mx-auto">
-          
-          {/* Obsidian Glass Card Container */}
-          <div className="relative p-8 sm:p-14 lg:p-16 rounded-3xl bg-[#0B1528]/90 backdrop-blur-xl border border-[#1C2E50] shadow-[0_30px_70px_rgba(0,0,0,0.6)] space-y-8">
-            
-            {/* Top Bar: Stars + Category + Verified Badge */}
-            <div className="flex flex-wrap items-center justify-between gap-4 border-b border-white/10 pb-6">
-              <div className="flex items-center gap-2">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-[#C5A059] text-[#C5A059]" />
-                ))}
-                <span className="text-xs uppercase font-mono text-[#DFCCA3] tracking-widest pl-2">
-                  5.0 Sanctuary Experience
-                </span>
-              </div>
-
-              <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-[#C5A059]/30 text-[11px] text-[#DFCCA3]">
-                <ShieldCheck className="w-3.5 h-3.5 text-[#C5A059]" />
-                <span className="font-mono uppercase tracking-wider text-[10px]">Verified Client</span>
-              </div>
-            </div>
-
-            {/* Pull Quote Headline */}
-            <div className="space-y-4">
-              <Quote className="w-10 h-10 text-[#C5A059]/40" />
-              <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-white font-normal leading-snug">
-                &ldquo;{active.headline}&rdquo;
-              </h3>
-              <p className="text-base sm:text-lg text-[#C9D6E8] font-light leading-relaxed pt-2">
-                {active.quote}
-              </p>
-            </div>
-
-            {/* Tangible Outcome Pill */}
-            <div className="p-4 rounded-xl bg-[#060D1A] border border-[#1C2E50] flex items-center justify-between gap-4">
-              <div className="flex items-center gap-2.5">
-                <Sparkles className="w-4 h-4 text-[#C5A059] shrink-0" />
-                <span className="text-xs text-[#DFCCA3] font-medium tracking-wide">
-                  Clinical Outcome: {active.outcome}
-                </span>
-              </div>
-              <span className="hidden sm:inline-block text-[10px] uppercase tracking-widest font-mono text-[#8C9BB4]">
-                {active.tenure}
-              </span>
-            </div>
-
-            {/* Bottom Meta & Author Profile */}
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 pt-4 border-t border-white/10">
-              
-              {/* Author Profile */}
-              <div className="flex items-center gap-4">
-                <div className="w-13 h-13 rounded-full bg-[#060D1A] border-2 border-[#C5A059] flex items-center justify-center text-[#DFCCA3] font-serif font-bold text-lg shadow-md shrink-0">
-                  {active.initials}
-                </div>
-                <div>
-                  <h4 className="font-serif text-lg text-white font-normal">
-                    {active.name}
-                  </h4>
-                  <p className="text-xs text-[#8C9BB4] font-light">
-                    {active.title} • <span className="text-[#DFCCA3]">{active.location}</span>
-                  </p>
-                  <p className="text-[11px] text-[#C5A059] font-mono mt-0.5">
-                    {active.treatment} • {active.duration}
-                  </p>
-                </div>
-              </div>
-
-              {/* Carousel Navigation Buttons & Counter */}
-              <div className="flex items-center gap-4 self-end sm:self-center">
-                <div className="font-mono text-xs text-[#8C9BB4] tracking-widest">
-                  <span className="text-[#DFCCA3] font-bold">{active.number}</span>
-                  <span className="mx-1 text-[#8C9BB4]/50">/</span>
-                  <span>03</span>
-                </div>
-
-                <div className="flex items-center gap-2">
-                  <button
-                    type="button"
-                    onClick={prevSlide}
-                    aria-label="Previous testimonial"
-                    className="w-10 h-10 rounded-full bg-white/5 hover:bg-[#C5A059] text-white hover:text-[#060D1A] border border-white/10 hover:border-[#C5A059] flex items-center justify-center transition-all duration-300"
-                  >
-                    <ChevronLeft className="w-4 h-4" />
-                  </button>
-
-                  <button
-                    type="button"
-                    onClick={nextSlide}
-                    aria-label="Next testimonial"
-                    className="w-10 h-10 rounded-full bg-white/5 hover:bg-[#C5A059] text-white hover:text-[#060D1A] border border-white/10 hover:border-[#C5A059] flex items-center justify-center transition-all duration-300"
-                  >
-                    <ChevronRight className="w-4 h-4" />
-                  </button>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-        </div>
-
-        {/* 3 Synchronized Quick-Switch Preview Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        {/* Selector: avatars with progress ring line */}
+        <div role="tablist" aria-label="Client reflections" className="mt-14 flex items-center justify-center gap-4">
           {TESTIMONIALS.map((t, idx) => {
-            const isCurrent = idx === activeIdx;
+            const isActive = idx === activeIdx;
             return (
               <button
                 key={t.id}
-                type="button"
+                role="tab"
+                aria-selected={isActive}
+                aria-label={t.name}
                 onClick={() => setActiveIdx(idx)}
-                className={`text-left p-5 rounded-2xl transition-all duration-300 border flex flex-col justify-between space-y-4 group ${
-                  isCurrent
-                    ? "bg-[#0B1528] border-[#C5A059] shadow-lg ring-1 ring-[#C5A059]/40"
-                    : "bg-[#0B1528]/50 hover:bg-[#0B1528] border-[#1C2E50] hover:border-[#C5A059]/40"
-                }`}
+                className="group flex flex-col items-center gap-3 focus:outline-none"
               >
-                <div className="flex items-center justify-between w-full">
-                  <span className="font-mono text-[10px] text-[#C5A059] tracking-widest uppercase">
-                    {t.number} • {t.location}
-                  </span>
-                  {isCurrent && (
-                    <span className="text-[9px] uppercase tracking-wider text-[#DFCCA3] font-semibold">
-                      Viewing
-                    </span>
+                <span
+                  className={`w-12 h-12 rounded-full flex items-center justify-center font-serif text-sm transition-all duration-500 group-focus-visible:ring-2 group-focus-visible:ring-white ${
+                    isActive ? "bg-[#FAF8F2] text-[#0B1528] scale-110" : "bg-white/10 text-white/60 group-hover:bg-white/20"
+                  }`}
+                >
+                  {t.initials}
+                </span>
+                <span className="block w-10 h-0.5 bg-white/15 overflow-hidden rounded-full">
+                  {isActive && (
+                    <span
+                      key={paused ? "paused" : "running"}
+                      className={`block h-full bg-accent origin-left ${paused ? "opacity-50" : ""}`}
+                      style={paused ? undefined : { animation: `tprogress ${AUTOPLAY_MS}ms linear forwards` }}
+                    />
                   )}
-                </div>
-
-                <div>
-                  <h4 className="font-serif text-sm text-white font-normal group-hover:text-[#DFCCA3] transition-colors line-clamp-1">
-                    {t.name}
-                  </h4>
-                  <p className="text-xs text-[#8C9BB4] font-light line-clamp-2 mt-1">
-                    &ldquo;{t.headline}&rdquo;
-                  </p>
-                </div>
-
-                <div className="pt-2 border-t border-white/5 flex items-center justify-between text-[10px] text-[#DFCCA3]/80">
-                  <span className="truncate">{t.treatment.split("&")[0].trim()}</span>
-                  <span className="font-mono">{t.duration}</span>
-                </div>
+                </span>
               </button>
             );
           })}
         </div>
-
-        {/* Reassurance Banner */}
-        <div className="text-center pt-4">
-          <p className="text-xs text-[#8C9BB4] font-light">
-            All reflections are shared with client consent • We maintain complete medical and personal discretion for every guest.
-          </p>
-        </div>
-
       </div>
     </section>
   );

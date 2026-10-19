@@ -3,12 +3,13 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Check, Clock, Sparkles, Shield, Compass } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check, Clock } from "lucide-react";
 import { getWhatsAppUrl } from "@/lib/utils";
 
 interface ExperienceChapter {
   id: string;
   number: string;
+  label: string;
   category: string;
   title: string;
   tagline: string;
@@ -30,6 +31,7 @@ const CHAPTERS: ExperienceChapter[] = [
   {
     id: "pain-relief",
     number: "01",
+    label: "Pain Relief",
     category: "Spine & Joint Care",
     title: "Pain Relief & Decompression Therapy",
     tagline: "Specialised clinical care for back, neck, shoulder, and knee pain.",
@@ -60,6 +62,7 @@ const CHAPTERS: ExperienceChapter[] = [
   {
     id: "sports-massage",
     number: "02",
+    label: "Sports Massage",
     category: "Athletic Recovery",
     title: "Sports Massage & Deep Tissue Remediation",
     tagline: "High-performance soft-tissue recovery engineered to eliminate muscular tension.",
@@ -90,6 +93,7 @@ const CHAPTERS: ExperienceChapter[] = [
   {
     id: "rehabilitation",
     number: "03",
+    label: "Rehabilitation",
     category: "Post Injury Rehab",
     title: "Rehabilitation & Movement Therapy",
     tagline: "Evidence-based protocols to rebuild strength, correct biomechanics, and restore function.",
@@ -124,200 +128,120 @@ export default function ExperienceShowcase() {
   const chapter = CHAPTERS[activeTab];
 
   return (
-    <div className="w-full space-y-10 sm:space-y-12">
-      {/* Luxury Segmented Pill Navigation — Clean Single Row */}
-      <div className="flex items-center justify-center gap-1.5 sm:gap-2 p-1.5 rounded-full bg-white/80 backdrop-blur-md border border-[#E8DEC8] shadow-sm max-w-xl mx-auto overflow-x-auto">
-        {CHAPTERS.map((item, idx) => {
-          const isActive = idx === activeTab;
-          return (
-            <button
-              key={item.id}
-              onClick={() => setActiveTab(idx)}
-              className={`whitespace-nowrap px-4 sm:px-5 py-2 rounded-full text-[11px] sm:text-xs font-medium uppercase tracking-[0.16em] transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A059] ${
-                isActive
-                  ? "bg-[#0B1528] text-white shadow-md"
-                  : "text-[#5E6977] hover:text-[#0B1528] hover:bg-black/5"
-              }`}
-            >
-              <span className="flex items-center gap-1.5">
-                <span className={`font-mono text-[10px] ${isActive ? "text-[#C5A059]" : "text-[#8C9BB4]"}`}>
-                  {item.number}
-                </span>
-                <span>{item.id === "massage" ? "Massage" : item.id === "fitness" ? "Movement" : "Holistic"}</span>
-              </span>
-            </button>
-          );
-        })}
+    <div className="surface-dark relative w-full overflow-hidden rounded-[2rem] bg-[#060D1A] text-white shadow-[0_40px_100px_-30px_rgba(11,21,40,0.7)]">
+      {/* Full-bleed crossfading photography */}
+      <div className="absolute inset-0">
+        {CHAPTERS.map((item, idx) => (
+          <Image
+            key={item.id}
+            src={item.image}
+            alt={item.alt}
+            fill
+            priority={idx === 0}
+            quality={90}
+            sizes="(min-width: 1280px) 1200px, 100vw"
+            className={`object-cover transition-all duration-[1200ms] ease-out ${
+              idx === activeTab ? "opacity-100 scale-100" : "opacity-0 scale-110"
+            }`}
+          />
+        ))}
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(6,13,26,0.95)_0%,rgba(6,13,26,0.8)_40%,rgba(6,13,26,0.25)_100%)]" />
+        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#060D1A] to-transparent" />
       </div>
 
-      {/* Main Architectural Showcase Card */}
-      <div className="rounded-3xl bg-white border border-[#E8DEC8] shadow-[0_20px_50px_rgba(11,21,40,0.06)] overflow-hidden transition-all duration-500">
-        <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch">
-          
-          {/* Left Column: Cinematic Visual Showcase (7 cols) */}
-          <div className="lg:col-span-7 relative min-h-[380px] sm:min-h-[480px] lg:min-h-[580px] overflow-hidden group">
-            <Image
-              src={chapter.image}
-              alt={chapter.alt}
-              fill
-              priority
-              quality={92}
-              className="object-cover object-center group-hover:scale-105 transition-transform duration-1000 ease-out"
-            />
-            {/* Subtle Gradient Overlays */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0B1528]/80 via-[#0B1528]/20 to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#0B1528]/40 via-transparent to-transparent hidden lg:block" />
-
-            {/* Floating Top Badge */}
-            <div className="absolute top-6 left-6 flex items-center gap-2 bg-[#0B1528]/80 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-[#C5A059]/40">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#C5A059] animate-pulse" />
-              <span className="text-[10px] uppercase tracking-[0.25em] text-[#DFCCA3] font-medium">
-                CROSA Sanctuary Colombo
-              </span>
-            </div>
-
-            {/* Bottom Visual Highlights */}
-            <div className="absolute bottom-6 left-6 right-6 flex flex-wrap items-end justify-between gap-4">
-              <div className="space-y-1">
-                <span className="font-mono text-xs uppercase tracking-widest text-[#DFCCA3] font-medium block">
-                  {chapter.number} &bull; {chapter.category}
-                </span>
-                <p className="font-serif text-xl sm:text-2xl text-white font-light max-w-md leading-snug">
-                  {chapter.tagline}
-                </p>
-              </div>
-
-              {/* Setting / Duration Pill */}
-              <div className="flex items-center gap-2 bg-white/15 backdrop-blur-md px-3.5 py-2 rounded-xl border border-white/20 text-white text-xs">
-                <Clock className="w-3.5 h-3.5 text-[#DFCCA3]" />
-                <span className="tracking-wider">{chapter.duration}</span>
-              </div>
-            </div>
+      <div className="relative z-10 flex flex-col min-h-[760px] lg:min-h-[720px] p-6 sm:p-10 lg:p-14">
+        {/* Top row */}
+        <div className="flex items-start justify-between gap-4">
+          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[10px] uppercase tracking-[0.25em] text-white">
+            <span className="w-1.5 h-1.5 rounded-full bg-accent-soft animate-pulse" />
+            {chapter.category}
+          </span>
+          <div className="hidden sm:flex items-center gap-2">
+            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[11px] text-white/90">
+              <Clock className="w-3.5 h-3.5" />
+              {chapter.duration}
+            </span>
+            <span className="px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[11px] text-white/90">
+              {chapter.setting}
+            </span>
           </div>
+        </div>
 
-          {/* Right Column: Luxury Editorial Narrative & Anatomy Spec (5 cols) */}
-          <div className="lg:col-span-5 p-8 sm:p-10 lg:p-12 flex flex-col justify-between bg-[#FAF8F2]">
-            <div className="space-y-6">
-              {/* Category & Title */}
-              <div className="space-y-2">
-                <div className="flex items-center gap-2">
-                  <span className="w-6 h-[1px] bg-[#C5A059]" />
-                  <span className="text-xs uppercase tracking-[0.3em] font-medium text-[#C5A059]">
-                    {chapter.category}
-                  </span>
-                </div>
-                <h3 className="font-serif text-2xl sm:text-3xl lg:text-[2rem] font-normal text-[#0B1528] leading-tight">
-                  {chapter.title}
-                </h3>
-              </div>
-
-              {/* Prose Description */}
-              <p className="text-sm sm:text-base text-[#5E6977] font-light leading-relaxed">
-                {chapter.description}
-              </p>
-
-              {/* Highlights Checklist */}
-              <div className="space-y-3 pt-2">
-                {chapter.highlights.map((hl, i) => (
-                  <div key={i} className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-[#0B1528] flex items-center justify-center shrink-0 mt-0.5 border border-[#C5A059]/40">
-                      <Check className="w-2.5 h-2.5 text-[#DFCCA3]" />
-                    </div>
-                    <div>
-                      <h4 className="text-xs font-semibold uppercase tracking-wider text-[#0B1528]">
-                        {hl.title}
-                      </h4>
-                      <p className="text-xs text-[#5E6977] font-light leading-relaxed">
-                        {hl.detail}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Lead Practitioner Quote */}
-              <div className="p-4 rounded-xl bg-white border border-[#E8DEC8] italic text-xs text-[#0B1528] font-serif leading-relaxed">
-                {chapter.quote}
-              </div>
+        {/* Content */}
+        <div className="flex-1 flex items-center py-10">
+          <div key={chapter.id} className="max-w-xl space-y-6 animate-in fade-in slide-in-from-bottom-3 duration-700">
+            <div className="flex items-end gap-4">
+              <span className="font-serif text-7xl sm:text-8xl font-extralight leading-none text-white/15">{chapter.number}</span>
             </div>
+            <h3 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-light leading-[1.08] -mt-10 sm:-mt-12">
+              {chapter.title}
+            </h3>
+            <p className="text-sm sm:text-base text-white/70 font-light leading-relaxed">{chapter.description}</p>
 
-            {/* CTAs */}
-            <div className="pt-8 border-t border-[#E8DEC8] flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+            <ul className="grid gap-2.5">
+              {chapter.highlights.map((hl) => (
+                <li key={hl.title} className="flex items-start gap-3 p-3.5 rounded-2xl bg-white/[0.06] backdrop-blur-sm border border-white/10">
+                  <span className="w-5 h-5 rounded-full bg-[#FAF8F2] text-[#0B1528] flex items-center justify-center shrink-0 mt-0.5">
+                    <Check className="w-3 h-3" />
+                  </span>
+                  <span>
+                    <span className="block text-xs font-semibold uppercase tracking-wider">{hl.title}</span>
+                    <span className="block text-xs text-white/60 font-light leading-relaxed mt-0.5">{hl.detail}</span>
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 pt-2">
               <a
                 href={getWhatsAppUrl(chapter.whatsappMessage)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#0B1528] hover:bg-[#112038] text-white border border-[#C5A059]/40 text-xs uppercase tracking-[0.2em] font-medium transition-all shadow-sm hover:shadow-md hover:scale-[1.02]"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[#FAF8F2] hover:bg-white text-[#0B1528] text-xs uppercase tracking-[0.2em] font-semibold transition-all shadow-lg shadow-black/30 hover:-translate-y-0.5"
               >
                 <span>Reserve Experience</span>
-                <ArrowUpRight className="w-3.5 h-3.5 text-[#DFCCA3]" />
+                <ArrowUpRight className="w-3.5 h-3.5" />
               </a>
-
               <Link
                 href={chapter.servicesLink}
-                className="inline-flex items-center justify-center gap-2 text-xs uppercase tracking-[0.18em] font-medium text-[#0B1528] hover:text-[#C5A059] transition-colors py-2 group"
+                className="group inline-flex items-center justify-center gap-2 text-xs uppercase tracking-[0.18em] font-medium text-white/90 hover:text-white transition-colors"
               >
                 <span>Full Details</span>
-                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform text-[#C5A059]" />
+                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
-
           </div>
         </div>
-      </div>
 
-      {/* Bottom 3 Interactive Preview Tiles */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {CHAPTERS.map((item, idx) => {
-          const isActive = idx === activeTab;
-          return (
-            <button
-              key={item.id}
-              onClick={() => setActiveTab(idx)}
-              className={`group relative text-left p-5 rounded-2xl transition-all duration-300 border flex items-center gap-4 ${
-                isActive
-                  ? "bg-white border-[#C5A059] shadow-lg ring-1 ring-[#C5A059]/40"
-                  : "bg-white/60 hover:bg-white border-[#E8DEC8] hover:border-[#C5A059]/40 shadow-sm"
-              }`}
-            >
-              {/* Thumbnail */}
-              <div className="relative w-16 h-16 rounded-xl overflow-hidden shrink-0 border border-black/10">
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  fill
-                  quality={80}
-                  className="object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                {isActive && (
-                  <div className="absolute inset-0 bg-[#0B1528]/40 flex items-center justify-center">
-                    <span className="w-2 h-2 rounded-full bg-[#C5A059] animate-ping" />
-                  </div>
-                )}
-              </div>
-
-              {/* Info */}
-              <div className="flex-1 min-w-0">
-                <div className="flex items-center justify-between gap-2 mb-1">
-                  <span className="font-mono text-[10px] text-[#C5A059] font-medium tracking-widest">
-                    {item.number} • {item.category.split("&")[0].trim()}
+        {/* Chapter selector */}
+        <div role="tablist" aria-label="Experience chapters" className="grid grid-cols-3 gap-2.5 sm:gap-4">
+          {CHAPTERS.map((item, idx) => {
+            const isActive = idx === activeTab;
+            return (
+              <button
+                key={item.id}
+                role="tab"
+                aria-selected={isActive}
+                onClick={() => setActiveTab(idx)}
+                className={`group relative flex items-center gap-3 sm:gap-4 p-2.5 sm:p-3.5 rounded-2xl text-left border backdrop-blur-xl transition-all duration-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-white ${
+                  isActive
+                    ? "bg-[#FAF8F2] border-[#FAF8F2] text-[#0B1528] shadow-xl -translate-y-1"
+                    : "bg-white/10 border-white/15 text-white hover:bg-white/20"
+                }`}
+              >
+                <span className="relative hidden sm:block w-14 h-14 rounded-xl overflow-hidden shrink-0">
+                  <Image src={item.image} alt="" fill sizes="56px" className="object-cover" />
+                </span>
+                <span className="min-w-0">
+                  <span className={`block font-mono text-[10px] tracking-widest ${isActive ? "text-accent" : "text-white/50"}`}>
+                    {item.number}
                   </span>
-                  {isActive && (
-                    <span className="text-[9px] uppercase tracking-wider text-[#C5A059] font-semibold">
-                      Viewing
-                    </span>
-                  )}
-                </div>
-                <h4 className="font-serif text-sm font-normal text-[#0B1528] truncate group-hover:text-[#C5A059] transition-colors">
-                  {item.title}
-                </h4>
-                <p className="text-[11px] text-[#5E6977] font-light truncate">
-                  {item.duration} • {item.setting}
-                </p>
-              </div>
-            </button>
-          );
-        })}
+                  <span className="block font-serif text-sm sm:text-lg leading-tight truncate">{item.label}</span>
+                </span>
+              </button>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

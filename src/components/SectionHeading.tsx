@@ -26,7 +26,7 @@ export default function SectionHeading({
       } max-w-3xl ${className}`}
     >
       {eyebrow && (
-        <p className="text-xs uppercase tracking-[0.25em] font-semibold text-[#C5A059]">
+        <p className="text-xs uppercase tracking-[0.25em] font-semibold text-accent">
           {eyebrow}
         </p>
       )}

@@ -13,11 +13,11 @@ export default function FloatingWhatsApp() {
     <aside aria-label="WhatsApp quick chat" className="fixed bottom-6 right-6 z-40 flex flex-col items-end">
       {/* Quick Tooltip Popup */}
       {showTooltip && (
-        <div className="mb-3 max-w-xs bg-[#0B1528] text-white p-4 rounded-xl shadow-2xl border border-[#1C2E50] animate-in fade-in slide-in-from-bottom-2 duration-200">
+        <div className="mb-3 max-w-xs surface-dark bg-[#0B1528] text-white p-4 rounded-xl shadow-2xl border border-[#1C2E50] animate-in fade-in slide-in-from-bottom-2 duration-200">
           <div className="flex items-start justify-between gap-3 mb-2">
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-[#25D366] animate-ping" />
-              <p className="text-xs font-semibold text-[#DFCCA3] uppercase tracking-wider">
+              <p className="text-xs font-semibold text-accent-soft uppercase tracking-wider">
                 {BRAND_INFO.name} Colombo
               </p>
             </div>
@@ -62,7 +62,7 @@ export default function FloatingWhatsApp() {
 
         {/* Small Tooltip on desktop hover if popup is closed */}
         {!showTooltip && (
-          <span className="hidden md:block absolute right-16 top-3 px-3 py-1.5 rounded-md bg-[#0B1528] text-white text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none border border-[#1C2E50] shadow-lg">
+          <span className="hidden md:block absolute right-16 top-3 px-3 py-1.5 rounded-md surface-dark bg-[#0B1528] text-white text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none border border-[#1C2E50] shadow-lg">
             Chat on WhatsApp
           </span>
         )}

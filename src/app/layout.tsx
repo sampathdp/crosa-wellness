@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import BackgroundMusic from "@/components/BackgroundMusic";
 import { BRAND_INFO } from "@/lib/constants";
 
 const sansFont = Outfit({
@@ -112,10 +113,10 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="font-sans min-h-screen flex flex-col bg-[#FAF8F2] text-[#0B1528] antialiased selection:bg-[#0B1528] selection:text-[#DFCCA3]">
+      <body className="font-sans min-h-screen flex flex-col bg-[#FAF8F2] text-[#0B1528] antialiased selection:bg-[#0B1528] selection:text-accent-soft">
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-50 px-4 py-2 bg-[#C5A059] text-[#0B1528] font-semibold rounded-md shadow-lg"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-50 px-4 py-2 bg-accent text-[#0B1528] font-semibold rounded-md shadow-lg"
         >
           Skip to main content
         </a>
@@ -126,6 +127,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <FloatingWhatsApp />
+        <BackgroundMusic />
       </body>
     </html>
   );

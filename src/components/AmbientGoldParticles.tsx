@@ -44,9 +44,9 @@ export default function AmbientGoldParticles({
     const particles: Particle[] = [];
 
     const hues = {
-      gold: "197, 160, 89", // #C5A059
-      ivory: "245, 239, 230", // #F5EFE6
-      champagne: "223, 204, 163", // #DFCCA3
+      gold: "174, 189, 217", // pale navy tint
+      ivory: "250, 248, 242", // ivory
+      champagne: "255, 255, 255", // white
     };
 
     const createParticle = (): Particle => {
