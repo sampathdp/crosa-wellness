@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 import AmbientGoldParticles from "@/components/AmbientGoldParticles";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
+import PackingExportGallery from "@/components/PackingExportGallery";
 import { BRAND_INFO, SERVICES } from "@/lib/constants";
 import { getWhatsAppUrl } from "@/lib/utils";
 
@@ -562,7 +563,10 @@ export default function ServicesView() {
         </div>
       </section>
 
-      {/* 6. FAQ */}
+      {/* 6. PACKING & EXPORT SHOWCASE */}
+      <PackingExportGallery />
+
+      {/* 7. FAQ */}
       <section className="py-20 sm:py-24 bg-ivory-deep border-y border-line">
         <div className="max-w-6xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
           <div className="lg:col-span-4 space-y-4">
