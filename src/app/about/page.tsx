@@ -21,7 +21,7 @@ export default function AboutPage() {
       <section className="relative pt-36 pb-20 sm:pt-44 sm:pb-28 surface-dark bg-[#060D1A] text-white overflow-hidden">
         <div className="absolute inset-0 opacity-25">
           <Image
-            src="/images/about.jpg"
+            src="/images/physio/rehabilitation.jpg"
             alt="About CROSA Pain Management Colombo"
             fill
             priority
@@ -80,8 +80,8 @@ export default function AboutPage() {
             <div className="lg:col-span-6">
               <div className="relative h-[380px] sm:h-[460px] w-full rounded-2xl overflow-hidden shadow-xl border border-line">
                 <Image
-                  src="/images/facility.jpg"
-                  alt="CROSA Pain Management Center Facility"
+                  src="/images/physio/shoulder-mobility.jpg"
+                  alt="CROSA male physiotherapist conducting clinical mobility examination"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"

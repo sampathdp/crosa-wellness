@@ -34,7 +34,7 @@ const PATHWAYS: JourneyPathway[] = [
     category: "Athletic Performance",
     title: "Remedial Sports Massage & Muscular Flush",
     tagline: "Deep tissue tension release and metabolic clearance for athletes and active individuals.",
-    treatment: "Deep Tissue Remedial Massage + Thermal Basalt Synergy + Fascial Reset",
+    treatment: "Deep Tissue Remedial Massage + Targeted Myofascial Release + Joint Mobilization",
     duration: "60 • 90 Mins",
     whatsappMessage: "Hello CROSA, I would like to book the Remedial Sports Massage pathway.",
   },
@@ -67,7 +67,7 @@ export default function WellnessJourneySection() {
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
           
-          {/* Left Column: Multi-Layered Architectural Sanctuary Portal */}
+          {/* Left Column: Multi-Layered Architectural Portal */}
           <div className="lg:col-span-6 relative">
             <div className="relative max-w-lg mx-auto lg:mr-0">
               
@@ -75,8 +75,8 @@ export default function WellnessJourneySection() {
               <div className="relative rounded-t-[4rem] rounded-b-3xl overflow-hidden p-1.5 bg-gradient-to-b from-accent/40 via-accent/10 to-transparent shadow-[0_25px_60px_rgba(11,21,40,0.18)]">
                 <div className="relative aspect-[4/5] sm:aspect-[3/4] w-full rounded-t-[3.8rem] rounded-b-2xl overflow-hidden group">
                   <Image
-                    src="/images/journey/arrival.jpg"
-                    alt="CROSA client unwinding in a private teakwood lounge with herbal tea and bamboo courtyard garden view"
+                    src="/images/physio/neck-decompression.jpg"
+                    alt="CROSA male physiotherapist performing clinical cervical decompression in a treatment room"
                     fill
                     quality={92}
                     className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
@@ -88,11 +88,11 @@ export default function WellnessJourneySection() {
                     <div className="flex items-center gap-2">
                       <span className="w-1.5 h-1.5 rounded-full bg-accent" />
                       <span className="text-[10px] uppercase tracking-[0.25em] text-accent-soft font-medium">
-                        Arrival & Reflection Lounge
+                        Clinical Intake & Assessment Bay
                       </span>
                     </div>
                     <p className="font-serif text-lg font-light text-white">
-                      Unhurried, peaceful, and secluded from Colombo&apos;s tempo.
+                      Unhurried, attentive, and dedicated to your pain recovery.
                     </p>
                   </div>
                 </div>
@@ -142,11 +142,11 @@ export default function WellnessJourneySection() {
               </div>
 
               <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-light text-[#0B1528] tracking-tight leading-[1.12]">
-                Your Wellness Journey Starts Here.
+                Your Recovery Journey Starts Here.
               </h2>
 
               <p className="text-sm sm:text-base text-[#5E6977] font-light leading-relaxed">
-                Whether you wish to resolve persistent desk-bound neck and shoulder stiffness, rebuild athletic mobility, or enjoy an unhurried afternoon of restorative recovery, select your intended pathway below.
+                Whether you wish to resolve persistent desk-bound neck and shoulder stiffness, rebuild athletic mobility, or undergo structured post-injury rehabilitation, select your intended pathway below.
               </p>
             </div>
 
@@ -229,7 +229,7 @@ export default function WellnessJourneySection() {
                   className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full bg-white hover:bg-[#FAF8F2] border border-line hover:border-accent text-xs uppercase tracking-[0.18em] font-medium text-[#0B1528] transition-all"
                 >
                   <MapPin className="w-3.5 h-3.5 text-accent" />
-                  <span>Sanctuary Location</span>
+                  <span>Clinic Location</span>
                 </Link>
               </div>
 

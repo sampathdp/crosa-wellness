@@ -13,29 +13,24 @@ export interface HeroSlide {
 
 const DEFAULT_SLIDES: HeroSlide[] = [
   {
-    src: "/images/hero/spa-suite.jpg",
-    alt: "CROSA Sanctuary - Sunlit Restorative Spa Suite with Teak Accents",
-    tagline: "Restorative Spa Suite",
+    src: "/images/physio/pain-relief.jpg",
+    alt: "CROSA male physiotherapist performing manual spinal decompression and pain relief therapy",
+    tagline: "Spinal Decompression & Pain Relief",
   },
   {
-    src: "/images/hero/fitness-studio.jpg",
-    alt: "CROSA Sanctuary - Private Movement & Personal Training Studio",
-    tagline: "Private Movement Studio",
+    src: "/images/physio/rehabilitation.jpg",
+    alt: "CROSA male physiotherapist guiding active knee and leg rehabilitation exercises",
+    tagline: "Active Joint Rehabilitation",
   },
   {
-    src: "/images/hero/therapeutic-massage.jpg",
-    alt: "CROSA Sanctuary - Therapeutic Massage Botanicals & Volcanic Stones",
-    tagline: "Therapeutic Botanicals",
+    src: "/images/physio/sports-massage.jpg",
+    alt: "CROSA male sports physiotherapist performing remedial deep tissue massage on athlete",
+    tagline: "Remedial Sports Massage",
   },
   {
-    src: "/images/hero/arrival-lounge.jpg",
-    alt: "CROSA Sanctuary - Travertine Reception Lounge & Tea Courtyard",
-    tagline: "Arrival & Tea Lounge",
-  },
-  {
-    src: "/images/hero/restorative-space.jpg",
-    alt: "CROSA Sanctuary - Mindful Movement & Sound Therapy Space",
-    tagline: "Mindful Movement Space",
+    src: "/images/physio/movement-therapy.jpg",
+    alt: "CROSA male physiotherapist conducting clinical posture and kinetic movement analysis",
+    tagline: "Movement Therapy & Biomechanics",
   },
 ];
 
@@ -73,7 +68,7 @@ export default function HeroBgCarousel({
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       aria-roledescription="carousel"
-      aria-label="Sanctuary Highlights"
+      aria-label="Clinical Highlights"
     >
       {/* Background Images with Seamless Crossfade & Subtle Ken Burns */}
       {slides.map((slide, idx) => {

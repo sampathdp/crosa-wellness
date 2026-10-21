@@ -10,18 +10,19 @@ import PrinciplesSection from "@/components/PrinciplesSection";
 import WellnessJourneySection from "@/components/WellnessJourneySection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import AmbientGoldParticles from "@/components/AmbientGoldParticles";
+import SpecialPackageBanner from "@/components/SpecialPackageBanner";
 import ServiceCard from "@/components/ServiceCard";
 import { BRAND_INFO, SERVICES, CONDITIONS_TREATED } from "@/lib/constants";
 import { getWhatsAppUrl } from "@/lib/utils";
 
 const CONDITION_ICONS = [Activity, Waves, Dumbbell, Footprints, Trophy, RotateCcw];
 const CONDITION_IMAGES = [
-  "/images/massage.jpg",
-  "/images/spa-detail.jpg",
-  "/images/trainer.jpg",
-  "/images/fitness.jpg",
-  "/images/hero/fitness-studio.jpg",
-  "/images/hero/restorative-space.jpg",
+  "/images/physio/pain-relief.jpg",
+  "/images/physio/neck-decompression.jpg",
+  "/images/physio/shoulder-mobility.jpg",
+  "/images/physio/rehabilitation.jpg",
+  "/images/physio/sports-massage.jpg",
+  "/images/physio/movement-therapy.jpg",
 ];
 
 export default function HomePage() {
@@ -108,6 +109,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <SpecialPackageBanner />
 
       {/* 2. CONDITIONS WE TREAT */}
       <section id="conditions" className="py-24 sm:py-28 bg-[#FAF8F2] border-b border-line">
@@ -201,12 +204,12 @@ export default function HomePage() {
               </p>
 
               <p className="text-base text-white/60 font-light leading-relaxed border-l border-white/20 pl-5">
-                <strong className="text-white font-medium">CROSA</strong> is a dedicated clinical sanctuary for pain management and physical rehabilitation at 283 - 287 Thimbirigasyaya Road. Our clinicians unite targeted pain relief, sports massage and structured movement therapy to guide you back to total physical freedom, without masking symptoms or enduring crowded gyms that aggravate hidden injuries.
+                <strong className="text-white font-medium">CROSA</strong> is a dedicated clinical center for pain management and physical rehabilitation at 283 - 287 Thimbirigasyaya Road. Our clinicians unite targeted pain relief, sports massage and structured movement therapy to guide you back to total physical freedom, without masking symptoms or enduring crowded gyms that aggravate hidden injuries.
               </p>
 
               <div className="grid grid-cols-3 gap-4 pt-2">
                 {[
-                  { n: "5", l: "Core disciplines" },
+                  { n: "6", l: "Core disciplines" },
                   { n: "6", l: "Conditions treated" },
                   { n: "14h", l: "Open daily" },
                 ].map((stat) => (
@@ -234,8 +237,8 @@ export default function HomePage() {
                 <div className="absolute -inset-4 translate-x-5 translate-y-5 rounded-t-[9rem] rounded-b-3xl border border-white/15" />
                 <div className="relative aspect-[4/5] w-full rounded-t-[9rem] rounded-b-3xl overflow-hidden group shadow-[0_40px_90px_rgba(0,0,0,0.6)]">
                   <Image
-                    src="/images/intro/practitioner.jpg"
-                    alt="Attentive CROSA practitioner providing clinical pain relief treatment"
+                    src="/images/physio/pain-relief.jpg"
+                    alt="Attentive CROSA male physiotherapist providing clinical spinal pain relief treatment"
                     fill
                     quality={92}
                     sizes="(min-width: 1024px) 560px, 90vw"
@@ -307,7 +310,7 @@ export default function HomePage() {
               <span className="w-6 h-[1px] bg-accent" />
             </div>
             <h2 className="font-serif text-3xl sm:text-5xl md:text-6xl font-light text-[#0B1528] tracking-tight leading-[1.12]">
-              Our 5 Core Disciplines
+              Our 6 Core Disciplines
             </h2>
             <p className="text-sm sm:text-base text-[#5E6977] font-light leading-relaxed max-w-lg mx-auto">
               Each discipline is delivered in private, immaculate suites by certified practitioners dedicated to clinical excellence.

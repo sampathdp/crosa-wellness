@@ -10,17 +10,16 @@ import {
   ClipboardList,
   Clock,
   Compass,
-  Dumbbell,
   HeartPulse,
   Activity,
   Shield,
   Flame,
   Sparkles,
-  Stethoscope,
+  Wind,
   TrendingUp,
-  Utensils,
 } from "lucide-react";
 import AmbientGoldParticles from "@/components/AmbientGoldParticles";
+import SpecialPackageBanner from "@/components/SpecialPackageBanner";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { BRAND_INFO, SERVICES } from "@/lib/constants";
 import { getWhatsAppUrl } from "@/lib/utils";
@@ -30,6 +29,7 @@ const SERVICE_ICONS: Record<string, React.ComponentType<{ className?: string; st
   "sports-massage": Flame,
   rehabilitation: Shield,
   "movement-therapy": Activity,
+  "cupping-therapy": Wind,
   "wellness-recovery": Sparkles,
 };
 
@@ -49,12 +49,6 @@ const PROCESS = [
     title: "Progress",
     text: "Guided sessions rebuild strength and mobility step by step. Most chronic cases need 4 to 8 visits.",
   },
-];
-
-const SPECIAL_PACKAGE_PILLARS = [
-  { icon: Dumbbell, title: "Targeted Workout Plan", text: "Safe, guided exercise to improve metabolic health and overall fitness." },
-  { icon: Utensils, title: "Customised Meal Plan", text: "Dietary routines structured to help regulate blood sugar and cholesterol." },
-  { icon: Stethoscope, title: "Pain Relief & Rehab Therapy", text: "Therapy for joint stiffness, calcium deficiency and numbness in hands, feet, back and neck." },
 ];
 
 interface NeedProfile {
@@ -124,7 +118,11 @@ const NEED_PROFILES: NeedProfile[] = [
 const FAQS = [
   {
     q: "What conditions do you specialise in treating?",
-    a: "Non-invasive, evidence-led care for back pain, neck pain, shoulder pain, knee pain, sports injuries and post-injury rehabilitation, plus sports massage, movement therapy and restorative wellness.",
+    a: "Non-invasive, evidence-led care for back pain, neck pain, shoulder pain, knee pain, sports injuries and post-injury rehabilitation, plus sports massage, movement therapy, cupping therapy and clinical recovery.",
+  },
+  {
+    q: "Do you offer a programme for diabetes and cholesterol?",
+    a: "Yes. Our Diabetes & Cholesterol Management package combines a targeted workout plan, a customised meal plan and pain relief and rehabilitation therapy for joint stiffness, calcium deficiency and numbness in the hands, feet, back and neck.",
   },
   {
     q: "Do I need a doctor's referral?",
@@ -196,12 +194,12 @@ export default function ServicesView() {
                 <p className="text-xs uppercase tracking-[0.35em] text-accent font-semibold">Our Services</p>
               </div>
               <h1 className="font-serif text-5xl sm:text-6xl xl:text-7xl font-light tracking-tight leading-[1.02]">
-                Five disciplines.
+                Six disciplines.
                 <br />
                 <span className="italic text-accent">One recovery plan.</span>
               </h1>
               <p className="text-base sm:text-lg text-[#5E6977] font-light leading-relaxed max-w-md">
-                Clinical pain relief, sports massage, rehabilitation, movement therapy and recovery, all under one roof in Colombo 05.
+                Clinical pain relief, sports massage, rehabilitation, movement therapy, cupping and recovery, all under one roof in Colombo 05.
               </p>
               <div className="flex flex-col sm:flex-row sm:items-center gap-3 pt-1">
                 <a
@@ -278,6 +276,8 @@ export default function ServicesView() {
           </div>
         </div>
       </section>
+
+      <SpecialPackageBanner />
 
       {/* 2. DISCIPLINE EXPLORER */}
       <section id="disciplines" className="scroll-mt-24 py-20 sm:py-28">
@@ -509,54 +509,6 @@ export default function ServicesView() {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 5. SPECIAL PACKAGE */}
-      <section id="special-package" className="scroll-mt-24 pb-20 sm:pb-28">
-        <div className="max-w-6xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
-            <div className="lg:col-span-5 space-y-5">
-              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0B1528] surface-dark text-[10px] font-semibold uppercase tracking-[0.25em] text-accent-soft">
-                <Sparkles className="w-3 h-3 text-accent" /> Special package
-              </span>
-              <h2 className="font-serif text-4xl sm:text-5xl font-light tracking-tight leading-[1.08]">
-                Diabetes &amp; <span className="italic text-accent">Cholesterol</span> Management
-              </h2>
-              <p className="text-[#5E6977] font-light leading-relaxed">
-                A 3-in-1 holistic programme to help you manage and reduce diabetes and cholesterol levels and return to an active daily life.
-              </p>
-              <a
-                href={getWhatsAppUrl("Hello CROSA, I would like to enquire about the Diabetes & Cholesterol Management special treatment package.")}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full surface-dark bg-[#0B1528] hover:bg-[#14233e] text-accent-soft hover:text-white text-xs font-semibold uppercase tracking-[0.15em] transition-colors"
-              >
-                <WhatsAppIcon className="w-4 h-4" fill="currentColor" />
-                Enquire about this package
-              </a>
-            </div>
-            <div className="lg:col-span-7 grid gap-4">
-              {SPECIAL_PACKAGE_PILLARS.map((p, i) => {
-                const Icon = p.icon;
-                return (
-                  <div
-                    key={p.title}
-                    className="flex items-start gap-5 p-6 rounded-2xl bg-white border border-line hover:border-accent/50 hover:shadow-lg transition-all"
-                  >
-                    <span className="w-12 h-12 rounded-xl bg-[#FAF8F2] text-accent grid place-items-center shrink-0">
-                      <Icon className="w-5 h-5" strokeWidth={1.6} />
-                    </span>
-                    <div className="flex-1">
-                      <h3 className="font-serif text-xl mb-1">{p.title}</h3>
-                      <p className="text-sm text-[#5E6977] leading-relaxed">{p.text}</p>
-                    </div>
-                    <span className="font-serif text-3xl text-[#0B1528]/15">0{i + 1}</span>
-                  </div>
-                );
-              })}
             </div>
           </div>
         </div>

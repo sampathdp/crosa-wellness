@@ -183,7 +183,7 @@ export default function HomeFaq() {
         </div>
         <div className="relative flex flex-col sm:flex-row gap-3">
           <a
-            href={getWhatsAppUrl("Hello CROSA, I have a question regarding your sanctuary services.")}
+            href={getWhatsAppUrl("Hello CROSA, I have a question regarding your pain relief and rehabilitation services.")}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[#FAF8F2] hover:bg-white text-[#0B1528] text-xs uppercase tracking-[0.18em] font-semibold transition-all hover:-translate-y-0.5"

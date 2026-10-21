@@ -20,12 +20,12 @@ export default function Footer() {
             </Link>
 
             <p className="text-sm sm:text-base text-[#9EADC2] font-light leading-relaxed max-w-md">
-              A calm sanctuary in the heart of Colombo uniting thoughtful physical movement with anatomical therapeutic massage and restorative care.
+              A premier clinical center in the heart of Colombo uniting evidence-led movement rehabilitation with clinical pain management and sports therapy.
             </p>
 
             <div className="pt-2">
               <a
-                href={getWhatsAppUrl("Hello CROSA, I would like to reserve an experience.")}
+                href={getWhatsAppUrl("Hello CROSA, I would like to reserve a clinical consultation.")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.2em] text-accent-soft hover:text-white transition-colors group"
@@ -39,10 +39,10 @@ export default function Footer() {
 
           {/* Columns */}
           <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-8">
-            {/* Sanctuary */}
+            {/* Clinic */}
             <div className="space-y-4">
               <p className="text-[11px] uppercase tracking-[0.25em] font-semibold text-accent">
-                Sanctuary
+                Clinic
               </p>
               <ul className="space-y-3 text-xs sm:text-sm font-light text-[#9EADC2]">
                 <li>
@@ -57,7 +57,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link href="/#philosophy" className="hover:text-accent-soft transition-colors">
-                    Wellbeing Philosophy
+                    Clinical Philosophy
                   </Link>
                 </li>
                 <li>
@@ -76,7 +76,7 @@ export default function Footer() {
             {/* Offerings */}
             <div className="space-y-4">
               <p className="text-[11px] uppercase tracking-[0.25em] font-semibold text-accent">
-                Offerings
+                Disciplines
               </p>
               <ul className="space-y-3 text-xs sm:text-sm font-light text-[#9EADC2]">
                 {SERVICES.map((s) => (
@@ -97,7 +97,7 @@ export default function Footer() {
             {/* Visit & Connect */}
             <div className="space-y-4">
               <p className="text-[11px] uppercase tracking-[0.25em] font-semibold text-accent">
-                Sanctuary Visit
+                Clinic Location
               </p>
               <div className="space-y-3 text-xs sm:text-sm font-light text-[#9EADC2] leading-relaxed">
                 <p>{BRAND_INFO.address.full}</p>

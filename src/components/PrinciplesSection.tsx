@@ -32,17 +32,17 @@ const PRINCIPLES: Principle[] = [
     title: "Purpose-Led Practice",
     tagline: "Every movement has a clear biological objective.",
     description:
-      "We eliminate empty fillers. Whether guiding an active mobility drill or applying heated basalt stones, every action is designed for cellular recovery and longevity.",
+      "We eliminate empty fillers. Whether guiding an active mobility drill or applying targeted joint mobilization, every action is designed for tissue recovery and movement longevity.",
     icon: ShieldCheck,
     tag: "Anatomical Precision",
   },
   {
     number: "03",
-    keyword: "Holistic",
+    keyword: "Evidence-Based",
     title: "Interconnected System",
-    tagline: "Physical conditioning meets nervous system calm.",
+    tagline: "Physical conditioning meets clinical tissue recovery.",
     description:
-      "Exertion without restoration leads to burnout. By uniting kinetic personal training with restorative bodywork under one quiet roof, we restore your body as a unified whole.",
+      "Exertion without restoration leads to injury. By uniting kinetic rehabilitation with restorative clinical bodywork under one roof, we restore your body as a unified kinetic chain.",
     icon: Layers,
     tag: "Dual Synergy",
   },
@@ -50,11 +50,11 @@ const PRINCIPLES: Principle[] = [
     number: "04",
     keyword: "Human",
     title: "Discreet & Attentive",
-    tagline: "A peaceful sanctuary free from gym bravado.",
+    tagline: "A dedicated clinical space free from gym bravado.",
     description:
-      "Step into a world of genuine warmth, quiet dignity, and complete privacy. No commercial distractions, no intimidation—only attentive guidance from certified practitioners.",
+      "Step into a world of genuine care, clinical dignity, and complete privacy. No commercial distractions, no intimidation—only attentive guidance from certified physiotherapists.",
     icon: HeartHandshake,
-    tag: "Sanctuary Ethos",
+    tag: "Clinical Care Ethos",
   },
 ];
 
@@ -65,8 +65,8 @@ export default function PrinciplesSection() {
         <div className="surface-dark relative overflow-hidden rounded-[2rem] sm:rounded-[3rem] bg-[#060D1A] text-white shadow-[0_50px_120px_-40px_rgba(11,21,40,0.8)]">
           {/* Photo + navy veil */}
           <Image
-            src="/images/hero/arrival-lounge.jpg"
-            alt=""
+            src="/images/physio/rehabilitation.jpg"
+            alt="Clinical Rehabilitation at CROSA Colombo"
             fill
             sizes="100vw"
             className="object-cover object-center"

@@ -41,8 +41,8 @@ export default function ContactPage() {
       {/* 1. HERO */}
       <section className="surface-dark relative pt-36 pb-44 sm:pt-44 sm:pb-52 bg-[#060D1A] text-white overflow-hidden">
         <Image
-          src="/images/hero/arrival-lounge.jpg"
-          alt=""
+          src="/images/physio/pain-relief.jpg"
+          alt="CROSA Pain Management & Rehabilitation Center Colombo"
           fill
           priority
           sizes="100vw"

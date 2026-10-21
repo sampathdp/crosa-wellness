@@ -5,7 +5,7 @@ export const BRAND_INFO = {
   secondaryTagline: "Less Pain, More Movement, Better Life",
   motto: "Recover • Rehabilitate • Perform",
   supportingText:
-    "Specialised care for your pain & movement. Expert pain relief, sports massage, rehabilitation, movement therapy, and wellness & recovery in Colombo.",
+    "Specialised care for your pain & movement. Expert pain relief, sports massage, rehabilitation, movement therapy, and clinical recovery in Colombo.",
   description:
     "CROSA is a specialised pain management and movement rehabilitation center in Colombo. We specialise in back pain, neck pain, shoulder pain, knee pain, sports injuries, and post-injury rehab — helping you recover, rehabilitate, and perform.",
   address: {
@@ -106,7 +106,7 @@ export const SERVICES = [
       "Knee joint stabilization & inflammation management",
       "Non-invasive, evidence-based pain management protocols",
     ],
-    image: "/images/hero/therapeutic-massage.jpg",
+    image: "/images/physio/pain-relief.jpg",
     whatsappMessage: "Hello CROSA, I would like to consult regarding Pain Relief treatment.",
   },
   {
@@ -124,7 +124,7 @@ export const SERVICES = [
       "Pre- and post-competition athletic priming",
       "Injury prevention for high-impact physical routines",
     ],
-    image: "/images/massage.jpg",
+    image: "/images/physio/sports-massage.jpg",
     whatsappMessage: "Hello CROSA, I would like to book a Sports Massage session.",
   },
   {
@@ -142,7 +142,7 @@ export const SERVICES = [
       "Scar tissue mobilization & swelling reduction",
       "Guided return-to-sport and daily functional movement",
     ],
-    image: "/images/facility.jpg",
+    image: "/images/physio/rehabilitation.jpg",
     whatsappMessage: "Hello CROSA, I am inquiring about Post Injury Rehabilitation.",
   },
   {
@@ -160,26 +160,44 @@ export const SERVICES = [
       "Corrective movement patterns to prevent re-injury",
       "Private 1-on-1 coaching in a calm studio bay",
     ],
-    image: "/images/fitness.jpg",
+    image: "/images/physio/movement-therapy.jpg",
     whatsappMessage: "Hello CROSA, I am interested in Movement Therapy coaching.",
   },
   {
-    id: "wellness-recovery",
-    title: "Wellness & Recovery",
-    badge: "Holistic Health",
+    id: "cupping-therapy",
+    title: "Cupping Therapy",
+    badge: "Myofascial Release",
     shortDescription:
-      "Restorative therapies to down-regulate stress, soothe the nervous system, and support long-term physical wellbeing.",
+      "Suction-based cupping therapy to release deep muscle tension, improve circulation and ease stubborn pain.",
     fullDescription:
-      "Sustain your progress with restorative wellness therapies designed to quiet the nervous system, release systemic fatigue, and promote cellular recovery. Combining gentle restorative decompression, thermal care, and holistic techniques, this is your sanctuary for long-term health and vitality.",
+      "Cupping therapy is offered at CROSA as a separate, dedicated treatment. Suction cups lift and decompress the soft tissue, easing tight muscles and trigger points, boosting local blood flow and helping stiff areas recover. It suits back, neck and shoulder tension and can be combined with your physiotherapy plan.",
     benefits: [
-      "Parasympathetic nervous system reset & stress reduction",
-      "Thermal basalt therapy & circulatory enhancement",
-      "Whole-body restorative decompression & relaxation",
-      "Chronic fatigue relief & improved sleep quality",
-      "Long-term maintenance for a healthier, pain-free life",
+      "Deep muscle tension & trigger point release",
+      "Improved local circulation & tissue recovery",
+      "Relief for back, neck & shoulder stiffness",
+      "Reduced muscle soreness after training",
+      "Can be combined with physiotherapy sessions",
     ],
-    image: "/images/wellness.jpg",
-    whatsappMessage: "Hello CROSA, I would like to book a Wellness & Recovery session.",
+    image: "/images/physio/cupping-therapy.jpg",
+    whatsappMessage: "Hello CROSA, I would like to book a Cupping Therapy session.",
+  },
+  {
+    id: "wellness-recovery",
+    title: "Clinical Recovery & Mobility",
+    badge: "Neuromuscular Recovery",
+    shortDescription:
+      "Structured clinical recovery and assisted mobility therapies to relieve deep muscular fatigue and sustain long-term movement health.",
+    fullDescription:
+      "Sustain your physical progress with structured clinical recovery protocols designed to reset neuromuscular tension, alleviate chronic movement fatigue, and promote tissue regeneration. Combining assisted stretching, targeted myofascial decompression, and joint mobility conditioning, our clinical recovery sessions help your body heal, adapt, and maintain lasting freedom of movement.",
+    benefits: [
+      "Targeted myofascial decompression & neuromuscular reset",
+      "Assisted stretching & joint mobility restoration",
+      "Post-rehabilitation circulatory clearing & tissue repair",
+      "Relief from chronic postural fatigue & desk strain",
+      "Long-term mobility maintenance for an active, pain-free life",
+    ],
+    image: "/images/physio/wellness-recovery.jpg",
+    whatsappMessage: "Hello CROSA, I would like to book a Clinical Recovery & Mobility session.",
   },
 ];
 
@@ -199,7 +217,7 @@ export const WHY_US_FEATURES = [
   {
     title: "Private Modern Facility",
     description:
-      "Located centrally on Thimbirigasyaya Road in Colombo, our space offers completely private treatment suites, modern equipment, and immaculate hygiene.",
+      "Located centrally on Thimbirigasyaya Road in Colombo, our clinic offers completely private treatment suites, modern rehabilitation equipment, and immaculate clinical hygiene.",
     icon: "Building2",
   },
   {

@@ -28,12 +28,12 @@ const TESTIMONIALS: Testimonial[] = [
     name: "Dilani Perera",
     title: "Corporate Director",
     location: "Colombo 07",
-    treatment: "Therapeutic Massage & Basalt Release",
+    treatment: "Pain Relief & Spinal Decompression",
     duration: "90 Mins",
     tenure: "Client for 8 Months",
     headline: "The chronic tension in my neck and shoulders dissolved after just two sessions.",
     quote:
-      "Working demanding executive hours in Colombo, muscular stiffness was something I had simply accepted as inevitable. The anatomical massage at CROSA is unlike anything else in Sri Lanka—rigorous, deeply clinical, yet completely restorative. I leave every session with an upright, lengthened spine and lasting mental clarity.",
+      "Working demanding executive hours in Colombo, muscular stiffness was something I had simply accepted as inevitable. The clinical therapy at CROSA is unlike anything else in Sri Lanka—rigorous, deeply focused on anatomy, and genuinely effective. I leave every session with an upright, pain-free spine and lasting relief.",
     outcome: "Eliminated chronic trapezius stiffness & headaches",
   },
   {
@@ -58,13 +58,13 @@ const TESTIMONIALS: Testimonial[] = [
     name: "Dr. Shanti Wickramasinghe",
     title: "Consultant Physician",
     location: "Colombo 05",
-    treatment: "Holistic Rejuvenation & Sound Sanctuary",
+    treatment: "Clinical Rehabilitation & Joint Therapy",
     duration: "75 Mins",
-    tenure: "Bi-weekly Sanctuary Member",
-    headline: "A rare clinical sanctuary where the nervous system is genuinely respected.",
+    tenure: "Regular Clinic Client",
+    headline: "An evidence-based center where musculoskeletal mechanics are genuinely understood.",
     quote:
-      "As a medical specialist, I am naturally skeptical of superficial wellness claims. CROSA is the antithesis of that—every heated basalt stone, botanical compress, and breathwork cadence is grounded in anatomical science and parasympathetic down-regulation. It is my non-negotiable bi-weekly reset.",
-    outcome: "Deep parasympathetic recovery & improved sleep quality",
+      "As a medical specialist, I am naturally skeptical of superficial wellness claims. CROSA is the antithesis of that—every joint mobilization, decompression protocol, and corrective rehabilitation drill is grounded in anatomical science. It is my non-negotiable recommendation for spinal and joint health.",
+    outcome: "Evidence-led joint recovery & pain-free mobility",
   },
 ];
 

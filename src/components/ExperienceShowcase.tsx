@@ -37,8 +37,8 @@ const CHAPTERS: ExperienceChapter[] = [
     tagline: "Specialised clinical care for back, neck, shoulder, and knee pain.",
     description:
       "Move beyond temporary mask remedies into root-cause pain management. Our clinicians evaluate spinal biomechanics, joint tracking, and myofascial strain patterns, applying targeted manual decompression, trigger point release, and joint alignment to deliver lasting relief.",
-    image: "/images/hero/therapeutic-massage.jpg",
-    alt: "CROSA Pain Relief and spine decompression therapy in serene treatment suite",
+    image: "/images/physio/pain-relief.jpg",
+    alt: "CROSA male physiotherapist performing manual spinal pain relief and decompression therapy",
     duration: "60 • 90 Mins",
     setting: "Private Clinical Suite",
     highlights: [
@@ -68,8 +68,8 @@ const CHAPTERS: ExperienceChapter[] = [
     tagline: "High-performance soft-tissue recovery engineered to eliminate muscular tension.",
     description:
       "Engineered for athletes, lifters, and active performers. Our sports remedial massage deactivates dense knots, flushes metabolic waste, restores fascial elasticity, and shortens downtime between intense training sessions so you can perform pain-free.",
-    image: "/images/massage.jpg",
-    alt: "CROSA Sports Massage recovery session with deep tissue myofascial release",
+    image: "/images/physio/sports-massage.jpg",
+    alt: "CROSA male sports physiotherapist performing deep tissue sports remedial massage",
     duration: "60 • 90 Mins",
     setting: "Private Recovery Suite",
     highlights: [
@@ -99,8 +99,8 @@ const CHAPTERS: ExperienceChapter[] = [
     tagline: "Evidence-based protocols to rebuild strength, correct biomechanics, and restore function.",
     description:
       "Recover safely from acute injuries, ligament sprains, muscle tears, or orthopedic surgery. In our private movement bays, certified practitioners guide you through tissue remodeling, joint stabilization, and progressive reloading to bring you back to full capacity.",
-    image: "/images/fitness.jpg",
-    alt: "CROSA Movement Therapy and rehabilitation bay with corrective conditioning",
+    image: "/images/physio/rehabilitation.jpg",
+    alt: "CROSA male physiotherapist guiding a patient through active rehabilitation exercises",
     duration: "60 • 75 Mins",
     setting: "Private 1-on-1 Studio Bay",
     highlights: [

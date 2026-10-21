@@ -127,19 +127,19 @@ export default function Navbar() {
             </a>
 
             <a
-              href={getWhatsAppUrl("Hello CROSA, I would like to inquire about your sanctuary services.")}
+              href={getWhatsAppUrl("Hello CROSA, I would like to inquire about your pain relief and rehabilitation services.")}
               target="_blank"
               rel="noopener noreferrer"
               className="relative w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#25D366]/50 flex items-center justify-center transition-all duration-300"
-              title="Chat with Sanctuary Concierge on WhatsApp"
-              aria-label="WhatsApp Concierge"
+              title="Chat with Clinic Reception on WhatsApp"
+              aria-label="WhatsApp Reception"
             >
               <WhatsAppIcon className="w-4 h-4 text-[#25D366]" fill="#25D366" />
               <span className="absolute top-1.5 right-1.5 w-1.5 h-1.5 rounded-full bg-[#25D366] animate-pulse" />
             </a>
 
             <a
-              href={getWhatsAppUrl("Hello CROSA, I would like to book an experience at your sanctuary.")}
+              href={getWhatsAppUrl("Hello CROSA, I would like to book a consultation at your clinic.")}
               target="_blank"
               rel="noopener noreferrer"
               className="group relative inline-flex items-center gap-2 pl-5 pr-1.5 h-10 rounded-full overflow-hidden text-[11px] uppercase tracking-[0.18em] font-semibold bg-gradient-to-r from-accent via-white to-accent bg-[length:200%_100%] hover:bg-[position:100%_0] text-[#060D1A] transition-all duration-500 shadow-[0_4px_20px_rgba(174,189,217,0.3)] hover:shadow-[0_6px_28px_rgba(174,189,217,0.55)]"
@@ -154,7 +154,7 @@ export default function Navbar() {
           {/* Mobile actions */}
           <div className="flex items-center sm:hidden gap-2">
             <a
-              href={getWhatsAppUrl("Hello CROSA, I would like to inquire about your sanctuary services.")}
+              href={getWhatsAppUrl("Hello CROSA, I would like to inquire about your pain relief and rehabilitation services.")}
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 border border-white/10"
@@ -191,7 +191,7 @@ export default function Navbar() {
             <div className="flex items-center justify-between pb-4 border-b border-[#1C2E50] text-xs text-[#8C9BB4]">
               <div className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-                <span className="uppercase tracking-[0.25em] text-accent-soft font-medium">Boutique Sanctuary</span>
+                <span className="uppercase tracking-[0.25em] text-accent-soft font-medium">Pain & Rehabilitation Center</span>
               </div>
               <span className="font-mono text-[10px] text-[#8C9BB4]">Colombo 00500</span>
             </div>
