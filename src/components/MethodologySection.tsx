@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { ArrowUpRight, Check, Compass, ShieldCheck, Sparkles } from "lucide-react";
+import { ArrowUpRight, Check, ShieldCheck } from "lucide-react";
 import { getWhatsAppUrl } from "@/lib/utils";
 import AmbientGoldParticles from "./AmbientGoldParticles";
 

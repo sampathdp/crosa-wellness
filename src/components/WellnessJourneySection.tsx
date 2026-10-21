@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Check, Compass, ShieldCheck, Sparkles, Clock, MapPin } from "lucide-react";
+import { ArrowUpRight, Check, ShieldCheck, Sparkles, MapPin } from "lucide-react";
 import { getWhatsAppUrl } from "@/lib/utils";
 
 interface JourneyPathway {
