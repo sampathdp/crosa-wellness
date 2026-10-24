@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Activity, ArrowRight, ArrowUpRight, Clock, Dumbbell, Footprints, MapPin, Phone, RotateCcw, Trophy, Waves } from "lucide-react";
 import HomeFaq from "@/components/HomeFaq";
+import HomeTabs from "@/components/HomeTabs";
 import HeroBgCarousel from "@/components/HeroBgCarousel";
 import ExperienceShowcase from "@/components/ExperienceShowcase";
 import MethodologySection from "@/components/MethodologySection";
@@ -112,6 +113,13 @@ export default function HomePage() {
 
       <SpecialPackageBanner />
 
+      <HomeTabs
+        tabs={[
+          {
+            id: "conditions",
+            label: "Conditions",
+            content: (
+      <>
       {/* 2. CONDITIONS WE TREAT */}
       <section id="conditions" className="py-24 sm:py-28 bg-[#FAF8F2] border-b border-line">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-14">
@@ -177,7 +185,14 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
+      </>
+            ),
+          },
+          {
+            id: "about",
+            label: "About",
+            content: (
+      <>
       {/* 3. INTRODUCTION */}
       <section id="intro" className="surface-dark relative py-28 sm:py-36 bg-[#060D1A] text-white overflow-hidden">
         {/* Depth: soft navy glows + hairline grid */}
@@ -297,7 +312,14 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
+      </>
+            ),
+          },
+          {
+            id: "services",
+            label: "Services",
+            content: (
+      <>
       {/* 4. THE 5 CLINIC SERVICES SHOWCASE (FULL GRID) */}
       <section id="services-grid" className="py-24 sm:py-32 bg-ivory-deep border-b border-line">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-16">
@@ -334,7 +356,14 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
+      </>
+            ),
+          },
+          {
+            id: "experience",
+            label: "Experience",
+            content: (
+      <>
       {/* 5. CROSA EXPERIENCE CHAPTERS SHOWCASE */}
       <section id="experience" className="py-24 sm:py-32 bg-[#FAF8F2] border-b border-line">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-16">
@@ -366,16 +395,100 @@ export default function HomePage() {
 
       {/* 8. WELLNESS JOURNEY PATHWAYS */}
       <WellnessJourneySection />
+      </>
+            ),
+          },
+          {
+            id: "reviews",
+            label: "Reviews",
+            content: <TestimonialsSection />,
+          },
+          {
+            id: "faq",
+            label: "FAQ",
+            content: (
+              <section id="faq" className="py-28 sm:py-36 bg-[#FAF8F2] border-b border-line relative overflow-hidden">
+                <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative">
+                  <HomeFaq />
+                </div>
+              </section>
+            ),
+          },
+          {
+            id: "location",
+            label: "Location",
+            content: (
+              <section id="location" className="py-24 sm:py-28 bg-[#FAF8F2] border-b border-line">
+                <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-10">
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-3">
+                      <span className="w-8 h-px bg-accent" />
+                      <p className="text-xs uppercase tracking-[0.3em] font-semibold text-accent">Visit Us</p>
+                    </div>
+                    <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-[#0B1528] font-light tracking-tight leading-[1.08]">
+                      Find <span className="italic text-accent">the clinic</span>
+                    </h2>
+                  </div>
 
-      {/* 9. TESTIMONIALS */}
-      <TestimonialsSection />
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
+                    <div className="flex items-start gap-3 p-5 rounded-2xl bg-white border border-line">
+                      <MapPin className="w-5 h-5 text-accent shrink-0 mt-0.5" strokeWidth={1.6} />
+                      <span>{BRAND_INFO.address.full}</span>
+                    </div>
+                    <div className="flex items-start gap-3 p-5 rounded-2xl bg-white border border-line">
+                      <Clock className="w-5 h-5 text-accent shrink-0 mt-0.5" strokeWidth={1.6} />
+                      <span>
+                        {BRAND_INFO.hours.weekdays}
+                        <br />
+                        {BRAND_INFO.hours.weekends}
+                      </span>
+                    </div>
+                    <a
+                      href={`tel:${BRAND_INFO.phone.replace(/\s+/g, "")}`}
+                      className="flex items-start gap-3 p-5 rounded-2xl bg-white border border-line hover:border-[#0B1528] transition-colors"
+                    >
+                      <Phone className="w-5 h-5 text-accent shrink-0 mt-0.5" strokeWidth={1.6} />
+                      <span>{BRAND_INFO.phoneDisplay}</span>
+                    </a>
+                  </div>
 
-      {/* 10. FAQS */}
-      <section id="faq" className="py-28 sm:py-36 bg-[#FAF8F2] border-b border-line relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative">
-          <HomeFaq />
-        </div>
-      </section>
+                  <div className="relative w-full h-[380px] sm:h-[480px] rounded-[2rem] overflow-hidden border border-line bg-ivory-deep">
+                    <iframe
+                      title="CROSA Location in Colombo"
+                      src={BRAND_INFO.googleMapsEmbed}
+                      width="100%"
+                      height="100%"
+                      style={{ border: 0 }}
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      className="w-full h-full grayscale-[40%] contrast-[1.05]"
+                    />
+                  </div>
+
+                  <div className="flex flex-wrap gap-4">
+                    <a
+                      href={BRAND_INFO.googleMapsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-6 py-3 rounded-full surface-dark bg-[#0B1528] hover:bg-[#14233e] text-white text-[11px] uppercase tracking-[0.18em] font-semibold transition-colors"
+                    >
+                      Open in Google Maps
+                      <ArrowUpRight className="w-3.5 h-3.5" />
+                    </a>
+                    <Link
+                      href="/contact"
+                      className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-line hover:border-[#0B1528] text-[#0B1528] text-[11px] uppercase tracking-[0.18em] font-medium transition-colors"
+                    >
+                      Contact form
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
+                  </div>
+                </div>
+              </section>
+            ),
+          },
+        ]}
+      />
 
       {/* 11. FINAL CTA */}
       <section className="py-32 sm:py-40 surface-dark bg-[#0B1528] text-white text-center relative overflow-hidden">
