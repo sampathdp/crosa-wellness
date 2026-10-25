@@ -22,8 +22,8 @@ export const BRAND_INFO = {
   email: "crosafitness01@gmail.com",
   website: "crosaclinic.com",
   hours: {
-    weekdays: "Monday - Saturday: 6:00 AM - 8:30 PM",
-    weekends: "Sunday: 7:00 AM - 6:00 PM",
+    weekdays: "Open every day: 24 hours",
+    weekends: "Monday - Sunday, 24/7",
   },
   googleMapsUrl: "https://maps.google.com/?q=283+Thimbirigasyaya+Rd,+Colombo+00500",
   googleMapsEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.985651478144!2d79.86616237599026!3d6.892318893106889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25963b65287f3%3A0xe54ef02daef73144!2sThimbirigasyaya%20Rd%2C%20Colombo!5e0!3m2!1sen!2slk!4v1710000000000!5m2!1sen!2slk",

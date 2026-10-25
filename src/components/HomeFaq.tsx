@@ -179,7 +179,7 @@ export default function HomeFaq() {
         <div className="absolute -top-20 -right-10 w-80 h-80 rounded-full bg-[#2F4A7A]/40 blur-[90px] pointer-events-none" />
         <div className="relative space-y-2">
           <h4 className="font-serif text-3xl sm:text-4xl font-light">Still have a question?</h4>
-          <p className="text-sm text-white/60 font-light">Mon – Sat 6:00 AM – 8:30 PM &middot; Sun 7:00 AM – 6:00 PM</p>
+          <p className="text-sm text-white/60 font-light">Open every day, 24/7</p>
         </div>
         <div className="relative flex flex-col sm:flex-row gap-3">
           <a

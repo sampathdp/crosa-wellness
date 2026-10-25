@@ -91,7 +91,7 @@ export default function HomePage() {
             </div>
             <div className="flex items-center gap-3">
               <Clock className="w-4 h-4 text-accent shrink-0" />
-              <span className="text-white/80">Mon – Sat 6:00 AM – 8:30 PM</span>
+              <span className="text-white/80">Open every day, 24/7</span>
             </div>
             <div className="flex items-center justify-between gap-3">
               <span className="flex items-center gap-3">
@@ -226,7 +226,7 @@ export default function HomePage() {
                 {[
                   { n: "6", l: "Core disciplines" },
                   { n: "6", l: "Conditions treated" },
-                  { n: "14h", l: "Open daily" },
+                  { n: "24/7", l: "Open daily" },
                 ].map((stat) => (
                   <div key={stat.l} className="border-t border-white/20 pt-4">
                     <div className="font-serif text-4xl sm:text-5xl font-light text-white leading-none">{stat.n}</div>
